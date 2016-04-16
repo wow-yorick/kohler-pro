@@ -1,0 +1,519 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name='keywords' content='$!{data.seo.get(0).seo_keywords}&nbsp;'/>
+    <meta name='description' content='$!{data.seo.get(0).seo_description}&nbsp;'/>
+	#parse('style.vm')
+    <title>$!{data.seo.get(0).seo_title}&nbsp;</title>
+</head>
+<body>
+<div class="head_wrapper">
+	<!-- pub_header start -->
+		#parse('header_pc_cn.vm')
+	<!-- pub_header end -->
+	<div class="pub_submenu pdp_menu clearfix">
+	    <div class="submenu_panel bread">
+            <div class="bread_panel clearfix">
+							#if(${data.breadcrumb_name})
+									#set($Index=1)  
+							    #foreach($param in ${data.breadcrumb_name})
+										#if($Index > 1)
+										  <div class="bread_link" ><img src="images/arrow2.png" alt=""></div>
+										#end	
+										<a class="bread_link" href="${param.url}">
+										${param.name}</a>
+										#set($Index=$Index+1)  
+							    #end
+							#end
+		<!-- 
+                <a class="bread_link" href="index.html">首页</a>
+                <div class="bread_link" ><img src="images/arrow2.png" alt=""></div>
+                <a class="bread_link" href="bathroom.html">卫浴产品</a>
+                <div class="bread_link" ><img src="images/arrow2.png" alt=""></div>
+                <a class="bread_link" href="">浴缸</a>
+                <div class="bread_link" ><img src="images/arrow2.png" alt=""></div>
+                <a class="bread_link" href="">泡泡浴缸</a>
+		
+                <div class="bread_link" ><img src="images/arrow2.png" alt=""></div>
+                <a class="bread_link" href="">PORTRAIT®珀特勒 体验型泡泡浴缸</a>
+           	-->
+
+	     </div>
+	    </div>
+	</div>
+    <div class="pub_search">
+        <div class="pub_searchpanel">
+            <div class="pub_searchbar">
+                <input type="text" placeholder="请输入关键字或产品代码" />
+                <div class="pub_searchicon"></div>
+            </div>
+            <div class="pub_searchhistory">
+                <ul>
+                    <li>艾贝</li>
+                    <li>艾葆绰</li>
+                    <li>艾黛儿</li>
+                    <li>艾斯格尔独立套间</li>
+                </ul>
+                <div class="pub_searchall">查看所有搜索结果</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content_wrapper pdp">
+    <div class="product_warp clearfix">
+        <div class="product_pic">
+            <div class="product_main_pic">
+                <div id="img-divs1" data-id="baths-pd1"></div>
+                <div class="img-thumbnail-list clearfix">
+                <div class="slides-bar" id="slides" style="display:none">
+                    <ul class="clearfix">
+                        <li data-id="toilet-pd1"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1?wid=120&hei=120" alt=""></li>
+                        <li data-id="toilet-pd1"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1?wid=120&hei=120" alt=""></li>
+                        <li data-id="toilet-pd1"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1?wid=120&hei=120" alt=""></li>
+                        <li data-id="toilet-pd1"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1?wid=120&hei=120" alt=""></li>
+                    </ul>
+                    <ul class="clearfix" style="display:none">
+                        <li data-id="toilet-pd1-black"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1-black?wid=120&hei=120" alt=""></li>
+                        <li data-id="toilet-pd1-black"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1-black?wid=120&hei=120" alt=""></li>
+                        <li data-id="toilet-pd1-black"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1-black?wid=120&hei=120" alt=""></li>
+                        <li data-id="toilet-pd1-black"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1-black?wid=120&hei=120" alt=""></li>
+                    </ul>
+                    <ul class="clearfix" style="display:none">
+                        <li data-id="toilet-pd1-black"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1-black?wid=120&hei=120" alt=""></li>
+                        <li data-id="toilet-pd1-black"><img src="http://s7d4.scene7.com/is/image/kohlerchina/toilet-pd1-black?wid=120&hei=120" alt=""></li>
+                    </ul>
+                    <div href="#" class="slidesjs-previous slidesjs-navigation"></div>
+                    <div href="#" class="slidesjs-next slidesjs-navigation"></div>
+                </div>
+            </div>
+            </div>
+        <div class="product_title"><h2>Portrait® 珀特勒体验型泡泡浴缸</h2></div>
+        <div class="line560"></div>
+        <ul class="product_intro">
+            <li>独有122个细密喷孔,全方位的平衡按摩体验 “贴身”喷孔设计,外形美观,躺浴更舒适</li>
+            <li>聪明的清洁系统,健康有保证</li>
+            <li>随心所“浴”的三段分区泡泡体验</li>
+            <li>提供循环冲浪模式体验</li>
+        </ul>
+        <h3>产品属性</h3>
+        <div class="line560"></div>
+        <ul class="product_property">
+            <li><b>产品系列: </b>PORTRAIT® 珀特勒</li>
+            <li><b>装置类型: </b>嵌入式/台下安装</li>
+            <li><b>高度: </b>838mm</li>
+            <li><b>长度: </b>1.5-1.7m</li>
+            <li><b>材料: </b>高亮度压克力</li>
+            <li><b>沐浴人数: </b>2</li>
+            <li><b>形状: </b>长方形</li>
+            <li><b>尺寸: </b>1702×1067×559mm</li>
+        </ul>
+        <h4 class="product_parts_title">配件</h4>
+        <div class="line560"></div>
+        <div class="product_parts_panel">
+            <div class="product_parts_bar">
+                <p class="first_title">包括配件：</p>
+                <div class="product_parts_bar second_parts color clearfix p1">
+                   <p class="second_txt">K-1051025</p>
+                   <p class="second_txt">落枕</p>
+                </div>
+                <div class="product_parts_bar second_parts clearfix">
+                   <p class="second_txt">K-1051025</p>
+                   <p class="second_txt">落枕支架</p>
+                </div>
+            </div>
+            <div class="product_parts_bar">
+                <p class="first_title">包括配件：</p>
+                <div class="product_parts_bar second_parts color clearfix p2">
+                   <p class="second_txt">K-1051025</p>
+                   <p class="second_txt">落枕</p>
+                </div>
+            </div>
+            <div class="product_parts_bar">
+                <p class="first_title">包括配件：</p>
+                <div class="product_parts_bar second_parts color clearfix p3">
+                   <p class="second_txt">K-1051025</p>
+                   <p class="second_txt">落枕</p>
+                </div>
+            </div>
+        </div>
+        <div class="product_widget_data">部件和资料</div>
+        <div class="product_data_text">技术资料下载</div>
+        <div class="line560"></div>
+        <ul class="product_tech_data">
+            <li>草图／规格表</li>
+            <li>用户手册</li>
+        </ul>
+        <div class="product_data_text service">服务与支持</div>
+        <div class="line560"></div>
+        <div class="product_support_text">如您对此产品有任何疑问请致电我们的工作人员，他们会即使给您答复。</div>
+        <ul class="product_contact">
+            <li><b>联系方式：</b></li>
+            <li><b>400-800-4537</b></li>
+            <li class="product_contact_last">上午8:00至下午5:00，周一至周五</li>
+        </ul>
+        <div class="product_email_me"><p>给我们发邮件</p></div>
+        <ul class="product_email_tips">
+            <li><span>保养和清洁小贴士</span></li>
+            <li><span>担保信息</span></li>
+        </ul>
+    </div>
+    <div class="product_rightcontent">
+        <div class="product_feature">
+            <h1>PORTRAIT®珀特勒 体验型泡泡浴缸<br />K-1457T-G</h1>
+
+            <p class="color"><b>颜色：</b><span>白色陶瓷</span></p>
+            <ul class="product_color_warp clearfix">
+                <li data-id="baths-pd1" color="白色陶瓷" class="selected"></li>
+                <li data-id="baths-pd1-red" color="红色" class="red"></li>
+            </ul>
+            <ul class="product_car_btn clearfix">
+                <li class="product_btn_car"><i class="icon_car"></i>在线购买</li>
+            </ul>
+            <ul class="product_bottom_btn clearfix">
+                <li class="product_btn">产品对比</li>
+                <li class="product_btn">收藏</li>
+                <li class="product_btn2"></li>
+            </ul>
+        </div>
+        <div class="product_video">产品视频</div>
+        <div class="product_video_content">
+        	<div class="icon_play"><img src="images/icon_play.png" alt=""></div>
+            <div><img src="images/baths-pd2.jpg"/></div>
+            <p>产品视频介绍
+
+            <p>
+        </div>
+        <div class="product_video_content">
+        	<div class="icon_play"><img src="images/icon_play.png" alt=""></div>
+            <div><img src="images/baths-pd2.jpg"/></div>
+            <p>产品视频介绍
+
+            <p>
+        </div>
+        <div class="product_template">模版和符号下载</div>
+        <div class="line320"></div>
+        <div class="product_template_title">2D CAD 文件：</div>
+        <ul class="product_template_list">
+            <li class="product_template_list1">计划</li>
+            <li class="product_template_list2">文件名称<span>DWG&nbsp;&nbsp;|&nbsp;&nbsp;DXF</span></li>
+        </ul>
+        <ul class="product_template_list">
+            <li class="product_template_list1">字体</li>
+            <li class="product_template_list2">文件名称<span>DWG&nbsp;&nbsp;|&nbsp;&nbsp;DXF</span></li>
+        </ul>
+        <div class="product_template_title">3D CAD 文件：</div>
+        <ul class="product_template_list">
+            <li class="product_template_list2">文件名称<span>DWG&nbsp;&nbsp;|&nbsp;&nbsp;DXF</span></li>
+        </ul>
+        <div class="product_template_title">Cutout 模版：</div>
+        <ul class="product_template_list">
+            <li class="product_template_list2">文件名称<span>DWG&nbsp;&nbsp;|&nbsp;&nbsp;DXF</span></li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<div class="product_warp">
+    <div class="product_title_fx">最佳搭配</div>
+    <div class="product_associated clearfix">
+        <div class="slides-bar" id="slides1">
+        <ul class="clearfix">
+        <li>
+            <a href="faucetspd.html">
+                <div class="item_img"><img
+                        src="http://s7d4.scene7.com/is/image/kohlerchina/baths%2Dpd8?$transparency$&wid=232&hei=200" alt="">
+                </div>
+                <span>
+                    <h3>REVIVAL®丽依华</h3>
+                    <p>缸边式浴缸龙头</p>
+                    <p class="type">K-8664T-1</p>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="faucetspd.html">
+                <div class="item_img"><img
+                        src="http://s7d4.scene7.com/is/image/kohlerchina/baths%2Dpd8?$transparency$&wid=232&hei=200" alt="">
+                </div>
+                <span>
+                    <h3>REVIVAL®丽依华</h3>
+                    <p>缸边式浴缸龙头</p>
+                    <p class="type">K-8664T-1</p>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="faucetspd.html">
+                <div class="item_img"><img
+                        src="http://s7d4.scene7.com/is/image/kohlerchina/baths%2Dpd8?$transparency$&wid=232&hei=200" alt="">
+                </div>
+                <span>
+                    <h3>REVIVAL®丽依华</h3>
+                    <p>缸边式浴缸龙头</p>
+                    <p class="type">K-8664T-1</p>
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="faucetspd.html">
+                <div class="item_img"><img src="images/baths-pd3.jpg" alt=""></div>
+                <span>
+                    <h3>REVIVAL®丽依华</h3>
+                    <p>缸边式浴缸龙头</p>
+                    <p class="type">K-8664T-1</p>
+                </span>
+            </a>
+        </li>
+        </ul>
+        <ul class="clearfix">
+        <li>
+            <a href="faucetspd.html">
+                <div class="item_img"><img
+                        src="http://s7d4.scene7.com/is/image/kohlerchina/baths%2Dpd8?$transparency$&wid=232&hei=200" alt="">
+                </div>
+			 	<span>
+			 		<h3>REVIVAL®丽依华</h3>
+			 		<p>缸边式浴缸龙头</p>
+			 		<p class="type">K-8664T-1</p>
+			 	</span>
+            </a>
+        </li>
+        <li>
+            <a href="faucetspd.html">
+                <div class="item_img"><img
+                        src="http://s7d4.scene7.com/is/image/kohlerchina/baths%2Dpd8?$transparency$&wid=232&hei=200" alt="">
+                </div>
+				<span>
+					<h3>REVIVAL®丽依华</h3>
+					<p>缸边式浴缸龙头</p>
+					<p class="type">K-8664T-1</p>
+				</span>
+            </a>
+        </li>
+        <li>
+            <a href="faucetspd.html">
+                <div class="item_img"><img
+                        src="http://s7d4.scene7.com/is/image/kohlerchina/baths%2Dpd8?$transparency$&wid=232&hei=200" alt="">
+                </div>
+			 	<span>
+			 		<h3>REVIVAL®丽依华</h3>
+			 		<p>缸边式浴缸龙头</p>
+			 		<p class="type">K-8664T-1</p>
+			 	</span>
+            </a>
+        </li>
+        <li>
+            <a href="faucetspd.html">
+                <div class="item_img"><img src="images/baths-pd3.jpg" alt=""></div>
+				<span>
+					<h3>REVIVAL®丽依华</h3>
+					<p>缸边式浴缸龙头</p>
+					<p class="type">K-8664T-1</p>
+				</span>
+            </a>
+        </li>
+        </ul>
+        <div href="#" class="slidesjs-previous slidesjs-navigation icon_left1"></div>
+        <div href="#" class="slidesjs-next slidesjs-navigation icon_right1"></div>
+        </div>
+    </div>
+    <div class="product_title_fx product_mgnbottom">同系列产品</div>
+    <div class="index_series">
+        <div class="series_panel">
+            <div class="series_panel_img actived"><img src="images/series2.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series2.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series1.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series2.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series1.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series2.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series1.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series2.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series1.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series2.jpg" alt=""></div>
+            <div class="series_panel_img"><img src="images/series1.jpg" alt=""></div>
+
+            <div class="series_info">
+                <h4>Persuade® 珀斯唯一体化盆</h4>
+
+                <p>蕴聚传统风格与魅力，三层雕刻外形，精雕细琢。珀特勒浴缸为装修添彩，使现代家居更趋完美。</p>
+            </div>
+        </div>
+        <div id="series_scroll" class="series_scroll">
+            <ul id="scroll_panel" class="scroll_panel clearfix">
+                <li><span class="selected"></span><img src="images/baths-pd4.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd5.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd6.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd7.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd8.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd4.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd5.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd6.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd7.jpg" alt=""/></li>
+                <li><span></span><img src="images/baths-pd8.jpg" alt=""/></li>
+                <li class="last"><span></span><img src="images/baths-pd4.jpg" alt=""></li>
+            </ul>
+        </div>
+        <div class="scroll">
+            <div id="scrollbar" class="scrollbar">
+                <div class="handle"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product_recommend_warp">
+    <div class="product_recommend">
+        <div class="product_recommend_pic"><img src="images/baths-pd9.jpg"/></div>
+        <div class="product_recommend_info">
+            <h2>PORTRAIT® 珀特勒体验型</h2>
+            <h2 class="info">泡泡浴缸</h2>
+            <p>BubbleMassage（TM）泡泡浴缸是科勒公司荣誉推出的新一代按摩浴缸，创新的功能配以一贯的优雅外观设计，给您带来前所未有的沐浴体验。</p>
+            <h5>120-122个密集的喷孔，灵活可调的气流强度“贴身”设计，消除凸起感，舒适泡浴；聪明的清洁系统,手动/自动可选；整合的恒温功能,温暖舒适，精美炫目的控制面板。</h5>
+        </div>
+    </div>
+</div>
+<div class="product_warp">
+    <div class="product_title_fx">相似产品</div>
+    <div class="product_associated clearfix boxmgn">
+        <div class="slides-bar" id="slides2">
+        <ul class="clearfix">
+        <li>
+            <a href="bathspd.html">
+            <div class="item_img"><img src="images/baths-pd10.jpg" alt="">
+					<span>
+						<h3>Evok™艾芙</h3>
+						<p>1.8米长方形嵌入式泡泡浴缸</p>
+						<p class="type">K-45718T-G1P</p>
+					</span>
+                </a>
+        </li>
+        <li>
+            <a href="bathspd.html">
+            <div class="item_img"><img src="images/baths-pd10.jpg" alt=""></div>
+					<span>
+						<h3>Evok™艾芙</h3>
+						<p>1.8米长方形嵌入式泡泡浴缸</p>
+						<p class="type">K-45718T-G1P</p>
+					</span>
+                </a>
+        </li>
+        <li>
+            <a href="bathspd.html">
+            <div class="item_img"><img src="images/baths-pd11.jpg" alt=""></div>
+					<span>
+						<h3>Evok™艾芙</h3>
+						<p>体验型泡泡浴缸</p>
+						<p class="type">K-1744T-G1P</p>
+					</span>
+                </a>
+        </li>
+        <li>
+            <a href="bathspd.html">
+            <div class="item_img"><img src="images/baths-pd11.jpg" alt=""></div>
+					<span>
+						<h3>Evok™艾芙</h3>
+						<p>体验型泡泡浴缸</p>
+						<p class="type">K-1744T-G1P</p>
+					</span>
+                </a>
+        </li>
+        </ul>
+        <ul class="clearfix">
+        <li>
+            <a href="bathspd.html">
+            <div class="item_img"><img src="images/baths-pd10.jpg" alt="">
+                    <span>
+                        <h3>Evok™艾芙</h3>
+                        <p>1.8米长方形嵌入式泡泡浴缸</p>
+                        <p class="type">K-45718T-G1P</p>
+                    </span>
+                </a>
+        </li>
+        <li>
+            <a href="bathspd.html">
+            <div class="item_img"><img src="images/baths-pd10.jpg" alt=""></div>
+                    <span>
+                        <h3>Evok™艾芙</h3>
+                        <p>1.8米长方形嵌入式泡泡浴缸</p>
+                        <p class="type">K-45718T-G1P</p>
+                    </span>
+                </a>
+        </li>
+        <li>
+            <a href="bathspd.html">
+            <div class="item_img"><img src="images/baths-pd11.jpg" alt=""></div>
+                    <span>
+                        <h3>Evok™艾芙</h3>
+                        <p>体验型泡泡浴缸</p>
+                        <p class="type">K-1744T-G1P</p>
+                    </span>
+                </a>
+        </li>
+        <li>
+            <a href="bathspd.html">
+            <div class="item_img"><img src="images/baths-pd11.jpg" alt=""></div>
+                    <span>
+                        <h3>Evok™艾芙</h3>
+                        <p>体验型泡泡浴缸</p>
+                        <p class="type">K-1744T-G1P</p>
+                    </span>
+                </a>
+        </li>
+        </ul>
+        <div href="#" class="slidesjs-previous slidesjs-navigation icon_left1"></div>
+        <div href="#" class="slidesjs-next slidesjs-navigation icon_right1"></div>
+        </div>
+    </div>
+</div>
+<div class="pub_totop">
+    <div class="totop_btn"><img src="images/totop.png" alt=""></div>
+    <span>返回顶部</span>
+</div>
+<div class="pub_footer">
+    <div class="subnav">
+        <div class="layout about">
+            <h4>关于科勒</h4>
+            <ul>
+                <li><a href="" rel="nofollow">关于我们</a></li>
+                <li><a href="contact.html" rel="nofollow">联系我们</a></li>
+                <li><a href="" rel="nofollow">新闻中心</a></li>
+                <li><a href="support.html" rel="nofollow">售后支持</a></li>
+                <li><a href="" rel="nofollow">招贤纳士</a></li>
+            </ul>
+        </div>
+        <div class="layout">
+            <h4><br/></h4>
+            <ul>
+                <li><a href="" rel="nofollow">网站地图</a></li>
+                <li><a href="" rel="nofollow">科勒全球</a></li>
+                <li><a href="" rel="nofollow">法律声明</a></li>
+                <li><a href="" rel="nofollow">隐私条款</a></li>
+                <li><a href="" rel="nofollow">App下载</a></li>
+            </ul>
+        </div>
+        <div class="layout brand">
+            <h4>旗下品牌</h4>
+            <ul>
+                <li><a href="" rel="nofollow">Sterling</a></li>
+                <li><a href="" rel="nofollow">Kallista</a></li>
+                <li><a href="" rel="nofollow">Ann Sacks</a></li>
+                <li><a href="" rel="nofollow">Robern</a></li>
+            </ul>
+        </div>
+        <div class="layout media">
+            <h4>社交媒体</h4>
+            <ul>
+                <li class="blog"><a href="" rel="nofollow"><i></i><span>新浪微博</span></a></li>
+                <li class="qqblog"><a href="" rel="nofollow"><i></i><span>腾讯微博</span></a></li>
+                <li class="douban"><a href="" rel="nofollow"><i></i><span>豆瓣网</span></a></li>
+                <li class="renren"><a href="" rel="nofollow"><i></i><span>人人网</span></a></li>
+                <li class="qzone"><a href="" rel="nofollow"><i></i><span>QQ空间</span></a></li>
+                <li class="wechat"><a href="" rel="nofollow"><i></i><span>微信</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="pub_copyright">
+    <div class="copyright"><p>© Kohler Co. All Rights Reserved</p></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Cache-Control" content="max-age=300"/>
+    <meta name='keywords' content='$!{date.seo.get(0).seo_keywords}'/>
+    <meta name='description' content='$!{date.seo.get(0).seo_description}'/>
+    <meta name="applicable-device" content="pc">
+     #parse('style.vm')
+    <title>$!{data.seo.get(0).seo_title}</title>
+</head>
+<body>
+<div class="head_wrapper">
+    #parse("header_pc_cn.vm")
+</div>
+
+<div class="content_wrapper">
+	$!{data.static_content}
+	#parse("footer_pc_cn.vm")
+</div>
+</body>
+</html>

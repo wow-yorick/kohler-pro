@@ -1,0 +1,111 @@
+<div class="pub_header">
+        <div class="login_panel">
+            <ul>
+                <li class="language"><a href=""><i></i><span>中文</span></a></li>
+                <li class="login"><a href=""><i></i><span>Login/Registration</span></a></li>
+                <li class="favorite"><a href=""><i></i><span>My Favorite</span></a></li>
+                <li class="shop"><a href=""><i></i><span>Find A Showroom</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pub_nav">
+        <div class="nav_panel">
+            <a href="index.html" class="logo"></a>
+            <ul class="menu">
+                <li><a href="bathroom.html"><h1>BATHROOM</h1></a></li>
+                <li class="hovered"><a href="kitchen.html"><h1>KITCHEN</h1></a></li>
+                <li><a href=""><h1>HOME IDEAS</h1></a></li>
+                <li><a href=""><h1>PROFESSIONALS</h1></a></li>
+                <li><a href=""><h1>WHAT'S NEW</h1></a></li>
+            </ul>
+            <div class="search_panel"></div>
+        </div>
+    </div>
+    <div class="pub_submenu page_menu clearfix">
+        <div class="submenu_panel">
+            <ul>
+                <li class="first">
+                    <p index="bathroom_list1" href="">Toilets</p>
+                </li>
+                <li>
+                    <p index="bathroom_list2" href="">Most Advanced Toilets</p>
+                </li>
+                <li>
+                    <p index="bathroom_list3" href="">Intelligent Toilet Seat</p>
+                </li>
+                <li>
+                    <p index="bathroom_list4" href="">Toilet Seats and Bidets</p>
+                </li>
+                <li>
+                    <p index="bathroom_list5" href="">Bathtubs</p>
+                </li>
+                <li>
+                    <p index="bathroom_list6" href="">Showerheads</p>
+                </li>
+                <li>
+                    <p index="bathroom_list7" href="">Shower Doors</p>
+                </li>
+                <li class="first">
+                    <p index="bathroom_list8" href="">Grooming</p>
+                </li>
+                <li>
+                    <p index="bathroom_list9" href="">Bathroom Accessories</p>
+                </li>
+                <li>
+                    <p index="bathroom_list10" href="">Commercial Product</p>
+                </li>
+                <li>
+                    <p index="bathroom_list11" href="">Collections</p>
+                </li>
+                <li>
+                    <p index="bathroom_list12" href="">Artist Editions</p>
+                </li>
+                <li>
+                    <p index="bathroom_list13" href="">New Bathroom Products</p>
+                </li>
+            </ul>
+        </div>
+
+       #if(${data.Categories})
+	
+        <div class="submenu_panel actived">
+            <ul>
+			#foreach($Categories in ${data.Categories})
+				#if($velocityCount==1)
+				<li class="first">
+                    <p index="kitchen_list$velocityCount">$!{Categories.category_name}&nbsp;</p>
+				</li>
+				#elseif($velocityCount!=1  && $velocityCount!=${Categories.size()})
+				<li>
+                    <p index="kitchen_list$velocityCount">$!{Categories.category_name}&nbsp;</p>
+				</li>
+				#else
+				 
+				
+				<li class="last">
+                    <p index="kitchen_list$velocityCount">$!{Categories.category_name}&nbsp;</p>
+                </li>
+				#end
+			#end
+            </ul>
+        </div>
+		#end
+    </div>
+    <div class="pub_search">
+        <div class="pub_searchpanel">
+            <div class="pub_searchbar">
+                <input type="text" placeholder="请输入关键字或产品代码" />
+                <div class="pub_searchicon"></div>
+            </div>
+            <div class="pub_searchhistory">
+                <ul>
+                    <li>艾贝</li>
+                    <li>艾葆绰</li>
+                    <li>艾黛儿</li>
+                    <li>艾斯格尔独立套间</li>
+                </ul>
+                <div class="pub_searchall">查看所有搜索结果</div>
+            </div>
+        </div>
+    </div>
+</div>

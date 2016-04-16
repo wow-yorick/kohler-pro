@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name='keywords' content='$!{data.seo.get(0).seo_keywords}&nbsp;'/>
+    <meta name='description' content='$!{data.seo.get(0).seo_description}&nbsp;'/>
+    #parse("style.vm")
+    <link type="text/css" href="${data.base_url}css/product.css" rel="stylesheet"/>
+        <script type="text/javascript" src="${data.base_url}js/waterfall.js"></script>
+    <title>$!{data.seo.get(0).seo_title}&nbsp;</title>
+	  
+</head>
+<body>
+<div class="head_wrapper">
+#parse("header_pc_cn.vm")
+	<!-- 面包屑 start-->
+      <div class="pub_submenu page_menu clearfix">
+		<div class="submenu_panel bread">
+            <div class="bread_panel clearfix">
+            #if(${data.breadcrumb_name})
+					#set($Index=1)  
+			    #foreach($param in ${data.breadcrumb_name})
+						#if($Index > 1)
+						  <div class="bread_link" ><img src="${data.base_url}images/arrow2.png" alt=""></div>
+						#end	
+						<a class="bread_link" href="${param.url}">
+						${param.name}</a>
+						#set($Index=$Index+1)  
+			    #end
+			#end  
+            </div>
+        </div>
+    </div>
+	<!-- 面包屑 end-->
+</div>
+
+<input type="hidden" id="thisCatLang" value="1">
+<!-- pub_banner start -->
+<div class="content_wrapper">
+<div class="pub_banner product">
+    <div class="subwrapper baths">
+        #if(${data.hero_areas})
+		#foreach($hero_areas in ${data.hero_areas})
+			#if($velocityCount==1)
+			#if(${hero_areas.target_url})
+		    <a href="${hero_areas.target_url}" target="$!{hero_areas.operation}&nbsp;"   class="bgimg actived"><img src="${hero_areas.image_url}" alt="$!{hero_areas.image_alt}&nbsp;"></a>
+			#else
+			 <a class="bgimg actived"><img src="${hero_areas.image_url}" alt="$!{hero_areas.image_alt}&nbsp;"></a>
+			#end
+			#end
+			
+			#if($velocityCount!=1)
+			#if(${hero_areas.target_url})
+		    <a href="${hero_areas.target_url}" target="${hero_areas.operation}"   class="bgimg"><img src="${hero_areas.image_url}" alt="$!{hero_areas.image_alt}&nbsp;"></a>
+			#else
+			<a class="bgimg"><img src="${hero_areas.image_url}" alt="$!{hero_areas.image_alt}&nbsp;"></a>
+			#end
+			#end
+        #end   
+        #end   
+    </div>
+</div>
+<!-- pub_banner end -->
+<div id="getUrl" style="display:none" name="${data.base_url}" type="1"></div>
+<!-- clear fix start-->
+<div class="product_list clearfix">
+    <div class="left">
+        <div class="category">
+            <h1>公共商用产品</h1>
+            <div class="line220"></div>
+            <ul class="cate_list">
+                <li class="all active" name="ALL" type="ALL"><h2 name="全部分类">全部分类</h2></li>
+		#if(${data.Categories})
+                #foreach($category in ${data.Categories})
+                <li class="" name="${category.publish_folder_path}" type="${category.category_name}"><h2 name="${category.category_name}">${category.category_name}</h2></li>
+                #end
+                #end
+            </ul>
+        </div>
+        <div class="filter">
+            <div class="filter_title">
+                <h1>属性筛选</h1>
+                <div class="btn_clear">清空</div>
+                <div class="line220"></div>
+            </div>
+            <div class="filter_list">
+                <div class="filter_list_first">
+                    <p class="filter_list_first_title">系列风格</p>
+		    <div class="filter_list_second clearfix">
+                        <div class="sort_icon"><img src="${data.base_url}images/icon_filter1.jpg" alt=""/></div>
+                        <p class="filter_list_second_title">奇韵东方</p>
+                        <div class="icon_close" name="attr_1" content="奇韵东方"></div>
+                    </div>
+                    <div class="filter_list_second clearfix">
+                        <div class="sort_icon"><img src="${data.base_url}images/icon_filter1.jpg" alt=""/></div>
+                        <p class="filter_list_second_title">富丽西方</p>
+                        <div class="icon_close" name="attr_1" content="富丽西方"></div>
+                    </div>
+                    <div class="icon_first"></div>
+                </div>
+                <div class="line220"></div>
+            </div>
+            <div class="filter_list">
+                <div class="filter_list_first">
+                    <p class="filter_list_first_title">材质</p>
+                    <div class="icon_first"></div>
+		    <div class="filter_list_second clearfix">
+                        <div class="sort_icon"><img src="${data.base_url}images/icon_filter1.jpg" alt=""/></div>
+                        <p class="filter_list_second_title">大理石</p>
+                        <div class="icon_close" name="attr_5" content="大理石"></div>
+                    </div>
+		    <div class="filter_list_second clearfix">
+                        <div class="sort_icon"><img src="${data.base_url}images/icon_filter1.jpg" alt=""/></div>
+                        <p class="filter_list_second_title">玻璃</p>
+                        <div class="icon_close" name="attr_5" content="玻璃"></div>
+                    </div>
+                    <div class="filter_list_second clearfix">
+                        <div class="sort_icon"><img src="${data.base_url}images/icon_filter1.jpg" alt=""/></div>
+                        <p class="filter_list_second_title">绮美石</p>
+                        <div class="icon_close" name="attr_5" content="绮美石"></div>
+                    </div>
+                    <div class="filter_list_second clearfix">
+                        <div class="sort_icon"><img src="${data.base_url}images/icon_filter1.jpg" alt=""/></div>
+                        <p class="filter_list_second_title">铸铁</p>
+                        <div class="icon_close" name="attr_5" content="铸铁"></div>
+                    </div>
+                </div>
+                <div class="line220"></div>
+            </div>
+          
+            <!--<div class="filter_list">
+                <div class="filter_list_first">
+                    <p class="filter_list_first_title">系列风格</p>
+                    <div class="icon_first"></div>
+                    <div class="filter_list_second clearfix">
+                        <p class="filter_list_second_title ml20">自然原质</p>
+                        <div class="icon_second"></div>
+                        <div class="filter_list_third">
+                            <p class="filter_list_third_title">大理石</p>
+                            <div class="icon_close" name="test" content="大理石"></div>
+                        </div>
+                        <div class="filter_list_third">
+                            <p class="filter_list_third_title">绮美石</p>
+                            <div class="icon_close" name="test" content="绮美石"></div>
+                        </div>
+                        <div class="filter_list_third">
+                            <p class="filter_list_third_title">艺术玻璃</p>
+                            <div class="icon_close" name="test" content="艺术玻璃"></div>
+                        </div>
+                        <div class="filter_list_third">
+                            <p class="filter_list_third_title">铸铁</p>
+                            <div class="icon_close" name="test" content="铸铁"></div>
+                        </div>
+                        <div class="line220"></div>
+                    </div>
+                    <div class="filter_list_second clearfix">
+                        <p class="filter_list_second_title ml20">富丽西方</p>
+                        <div class="icon_second"></div>
+                        <div class="filter_list_third">
+                            <p class="filter_list_third_title">富丽西方</p>
+                            <div class="icon_close" name="test" content="富丽西方"></div>
+                        </div>
+                        <div class="line220"></div>
+                    </div>
+                    <div class="filter_list_second clearfix">
+                        <p class="filter_list_second_title ml20">气韵东方</p>
+                        <div class="icon_second"></div>
+                        <div class="filter_list_third">
+                            <p class="filter_list_third_title">气韵东方</p>
+                            <div class="icon_close" name="test" content="气韵东方"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line220"></div>
+            </div>-->
+        </div>
+    </div>
+<!-- clear fix end-->
+    <div class="right clearfix">
+        <div class="search">
+            <p>排列方式</p>
+            <ul class="select-panel clearfix">
+                <li class="option" type="price" name="true">价格从低到高</li>
+                <li class="option" type="price" name="false">价格从高到低</li>
+            </ul>
+        </div>
+        <ul class="item-panel">
+	    #if(${data.products_sku})
+	    #foreach($sku in ${data.products_sku})
+		 <li class="cate1">
+                <div>
+                    <div class="item_img"><img style="width:232px;height:200px;" src="${sku.list_image_url}" alt=""></div>
+                    <span>
+                       <h3>${sku.collection}</h3>
+                       <p>${sku.name}</p>
+                       <p class="type">${sku.sku_code}</p>
+                    </span>
+                </div>
+                <a href="${sku.target_url}" class="detail_popup">
+                    <div class="item_img"><img style="width:232px;height:200px;" src="${sku.list_image_url}" alt=""></div>
+                    <span>
+                       <h3>${sku.collection}</h3>
+                       <p>${sku.name}</p>
+                       <p class="type">${sku.sku_code}</p>
+                    </span>
+                </a>
+		<div class="preview" name="sku_${sku.sku_id}">快速预览</div>
+            </li>
+	    #end
+	    #end
+        </ul>
+	#if(${data.banner_units})
+	    <ul id="banner_unit" style="display:none;">
+	    #foreach($banner in ${data.banner_units})
+		 <li class="large" name="#if(${banner.banner_unit_row}) ${banner.banner_unit_row} #else 0 #end :#if(${banner.banner_unit_column}) ${banner.banner_unit_column} #else 0 #end ">
+                <div class="item_img_large"><img style="width:465px;height:330px" src="${banner.file_id}" alt="${banner.image_alt}"></div>
+                <span class="frame"></span>
+                ${banner.image_overlay_text}
+		</li>
+	    #end
+	    </ul>
+	    #end
+    </div>
+</div>
+#parse("footer_pc_cn.vm")
+<div class="compare_panel_small">
+    <div class="compare_bar_small">
+        <a class="compare_btn_show" href="javascript:;">产品对比</a><a class="compare_btn_hide" href="javascript:;">取消对比</a>
+    </div>
+</div>
+<div class="compare_panel_large">
+    <div class="compare_bar_large">
+        <div class="compare_bar_title">
+            <p class="p_title">产品对比</p>
+            <a href="javascript:;" class="compare_btn">产品对比</a>
+            <a href="javascript:;" class="compare_empty">清空</a>
+            <p class="p_hide">隐藏对比栏</p>
+        </div>
+        <div class="compare_bar_list">
+            <div class="compare_list">
+                <div class="compare_img">
+                    <img src="${data.base_url}images/baths7.jpg" alt="">
+                    <div class="compare_close"></div>
+                </div>
+                <div class="compare_txt">
+                    <p class="txt">RiverBath 瑞瀑</p>
+                    <p class="txt">圆形水力/水疗型<br />按摩浴缸</p>
+                    <p class="type">K-1189-C1</p>
+                </div>
+            </div>
+            <div class="compare_list">
+                <div class="compare_img">
+                    <img src="${data.base_url}images/baths8.jpg" alt="">
+                    <div class="compare_close"></div>
+                </div>
+                <div class="compare_txt">
+                    <p class="txt">PURIST® 飘瑞诗</p>
+                    <p class="txt">压克力按摩浴缸</p>
+                    <p class="type">K-1189-C1</p>
+                </div>
+            </div>
+            <div class="compare_list">
+                <div class="compare_img">
+                    <img src="${data.base_url}images/baths5.jpg" alt="">
+                    <div class="compare_close"></div>
+                </div>
+                <div class="compare_txt">
+                    <p class="txt">SOK® 素克</p>
+                    <p class="txt">溢流型水疗按摩浴缸<br />（灯光）</p>
+                    <p class="type">K-1189-C1</p>
+                </div>
+            </div>
+            <div class="compare_list add">
+                <div class="compare_img add">
+                    <img src="${data.base_url}images/compare_add.jpg" alt="">
+                </div>
+                <div class="compare_txt">
+                    <p class="txt">添加其他产品</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="product_popup">
+    #if(${data.products_sku})
+	    #foreach($sku in ${data.products_sku})
+		<div class="popup_panel" id="sku_${sku.sku_id}">
+		<div class="pop_img"><img src="${sku.detail_image_url}" alt=""></div>
+		<div class="pop_info">
+		    <div class="pop_close"><img src="${data.base_url}images/icon_close.png" alt=""></div>
+		    <div class="product_feature">
+			<div class="product_pop_details">
+			    <h1>${sku.collection}</h1>
+			    <h1>${sku.name}</h1>
+			    <p>${sku.sku_price}</p>
+			</div>
+			<div class="product_titles">
+			    <h3>${sku.sku_code}</h3>
+			    <p class="color"><b>颜色：</b><span>白色</span></p>
+			    <ul class="product_color_warp clearfix">
+				<li color="白色" class="selected"></li>
+				<!-- <li color="黑色" class="black"></li> -->
+			    </ul>
+			</div>
+			<a class="product_car_btn clearfix" href="bathspd.html">
+			    <li class="product_btn_car">点击查看详情</li>
+			</a>
+			<ul class="product_bottom_btn clearfix">
+			    <li class="product_btn compare" name="${sku.SKU_METADATA_ID}">产品对比</li>
+			    <li class="product_btn">收藏</li>
+			    <li class="product_btn2"></li>
+			</ul>
+		    </div>
+		</div>
+	    </div>
+	    #end
+	    #end
+    
+    <div class="popup_panel" id="pop11">
+        <div class="pop_img"><img src="${data.base_url}images/baths10.jpg" alt=""></div>
+        <div class="pop_info">
+            <div class="pop_close"><img src="${data.base_url}images/icon_close.png" alt=""></div>
+            <div class="product_feature">
+                <div class="product_pop_details">
+                    <h1>Evora™伊芙拉</h1>
+                    <h1>压克力按摩浴缸</h1>
+                    <p><!-- 飘瑞诗压克力按摩浴缸在带给您豪华沐浴体验的同时，更为您展现了一道特殊的风景：幻彩灯光。在七彩波光的循环荡漾中，放松身心，伴着光与水合奏的摇篮曲，悠游自在。只需轻轻一点按钮，循环便即停止，让您选择最适合心情的色彩。 --></p>
+                </div>
+                <div class="product_titles">
+                    <h3>K-11479T-VC1</h3>
+                    <p class="color"><b>颜色：</b><span>白色</span></p>
+                    <ul class="product_color_warp clearfix">
+                        <li color="白色" class="selected"></li>
+                        <!-- <li color="黑色" class="black"></li> -->
+                    </ul>
+                </div>
+                <a class="product_car_btn clearfix" href="bathspd.html">
+                    <li class="product_btn_car">点击查看详情</li>
+                </a>
+                <ul class="product_bottom_btn clearfix">
+                    <li class="product_btn compare">产品对比</li>
+                    <li class="product_btn">收藏</li>
+                    <li class="product_btn2"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

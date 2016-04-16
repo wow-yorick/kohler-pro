@@ -1,0 +1,174 @@
+<div id ="someArea" style="display:none"> 登录成功测试</div>
+<div class="pub_header" id="otherArea">
+    <div class="login_panel">
+        <ul>
+            <li class="language"><a href="javascript:;"><i></i><span>English</span></a></li>
+            <li class="login"><a href="javascript:;"><i></i><span id="login_btn">登录/</span><span id="register_btn">注册</span></a></li>
+            <li class="favorite"><a href="javascript:;"><i></i><span>我的收藏</span></a></li>
+            <li class="shop"><a href="address.html"><i></i><span>查找店铺</span></a></li>
+        </ul>
+    </div>
+</div>
+<div class="pub_nav">
+    <div class="nav_panel">
+        <a href="index.html" class="logo"></a>
+        <ul class="menu">
+            <li><a href="${data.base_url}catalog/bathroom/"><h1>卫浴产品</h1></a></li>
+            <li><a href="${data.base_url}catalog/kitchen/"><h1>厨房产品</h1></a></li>
+            <li><a href="gallery.html"><h1>家居畅想</h1></a></li>
+            <li><a href="javascript:;"><h1>设计师之家</h1></a></li>
+            <li><a href="javascript:;"><h1>最新资讯</h1></a></li>
+        </ul>
+        <div class="search_panel"></div>
+    </div>
+</div>
+<div class="pub_search">
+    <div class="pub_searchpanel">
+        <div class="pub_searchbar">
+            <input type="text" placeholder="请输入关键字或产品代码" />
+            <div class="pub_searchicon"></div>
+        </div>
+        <div class="pub_searchhistory">
+            <ul>
+                <li>艾贝</li>
+                <li>艾葆绰</li>
+                <li>艾黛儿</li>
+                <li>艾斯格尔独立套间</li>
+            </ul>
+            <div class="pub_searchall">查看所有搜索结果</div>
+        </div>
+    </div>
+</div>
+<div class="pub_submenu home_page">
+    <div class="submenu_panel bathroom clearfix">
+        <ul class="clearfix">
+            <li>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">一体·超感座便器</a></h5>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="${data.base_url}catalog/bathroom/toilet/">座便器</a></h5>
+                    <a href="javascript:;">连体座便器</a>
+                    <a href="javascript:;">分体座便器</a>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">座便器盖板</a></h5>
+                    <a href="javascript:;">智能座便器盖板</a>
+                    <a href="javascript:;">普通盖板</a>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">C3清舒宝智能座便盖</a></h5>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">浴室龙头</a></h5>
+                    <a href="javascript:;">台盆龙头</a>
+                    <a href="javascript:;">浴缸龙头</a>
+                    <a href="javascript:;">净身盆龙头</a>
+                    <a href="javascript:;">挂墙式花洒龙头</a>
+                    <a href="javascript:;">龙头配件</a>
+                </div>
+            </li>
+            <li>
+                <div class="list">
+                    <h5><a class="title" href="faucets.html">淋浴龙头</a></h5>
+                    <a href="javascript:;">淋浴柱及淋浴屏</a>
+                    <a href="javascript:;">头顶花洒</a>
+                    <a href="javascript:;">手持花洒</a>
+                    <a href="javascript:;">智能淋浴系统</a>
+                    <a href="javascript:;">入墙式阀芯及面板</a>
+                    <a href="javascript:;">淋浴配件</a>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">梳妆</a></h5>
+                    <a href="javascript:;">台盆</a>
+                    <a href="javascript:;">浴室家具</a>
+                    <a href="javascript:;">镜柜/镜子系列</a>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="baths.html">按摩浴缸</a></h5>
+                    <a href="javascript:;">水 · 乐浴缸</a>
+                    <a href="javascript:;">组合型水力/水疗按摩浴缸</a>
+                    <a href="javascript:;">舒缓型按摩浴缸</a>
+                    <a href="javascript:;">泡泡浴缸</a>
+                    <a href="javascript:;">舒适型水力按摩浴缸</a>
+                </div>
+            </li>
+            <li>
+                <div class="list">
+                    <h5><a class="title" href="${data.base_url}catalog/bathroom/bathtubs/">浴缸</a></h5>
+                    <a href="javascript:;">铸铁浴缸</a>
+                    <a href="javascript:;">压克力浴缸</a>
+                    <a href="javascript:;">绮美石浴缸</a>
+                    <a href="javascript:;">浴缸配件</a>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="showrooms.html">淋浴房</a></h5>
+                    <a href="javascript:;">淋浴房</a>
+                    <a href="javascript:;">淋浴房配件</a>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">蒸汽设备</a></h5>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">商用产品</a></h5>
+                    <a href="javascript:;">商用龙头</a>
+                    <a href="javascript:;">商用座便器</a>
+                    <a href="javascript:;">商用小便器</a>
+                    <a href="javascript:;">商用电子</a>
+                    <a href="javascript:;">净身器</a>
+                    <a href="javascript:;">商用配件</a>
+                </div>
+            </li>
+            <li>
+                <div class="list list20">
+                    <h5><a class="images" href="${data.base_url}catalog/bathroom/art-series/">艺术系列</a></h5>
+                    <a href="arts.html"><img src="${data.base_url}images/submenu1.jpg" alt=""></a>
+                </div>
+                <div class="list list20">
+                    <h5><a class="images" href="${data.base_url}catalog/bathroom/suites/">套间</a></h5>
+                    <a href="collection.html"><img src="${data.base_url}images/submenu2.jpg" alt=""></a>
+                </div>
+                <div class="list">
+                    <h5><a class="images" href="${data.base_url}catalog/bathroom/new-product/">新品</a></h5>
+                    <a href="newbaths.html"><img src="${data.base_url}images/submenu3.jpg" alt=""></a>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">浴室配件</a></h5>
+                    <a href="javascript:;">浴室配件系列</a>
+                    <a href="javascript:;">灯具系列</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="submenu_panel kitchen clearfix">
+        <ul class="clearfix">
+            <li>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">整体橱柜</a></h5>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="toilets.html">厨盆</a></h5>
+                    <a href="javascript:;">厨盆</a>
+                    <a href="javascript:;">厨房配件</a>
+                </div>
+            </li>
+            <li>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">厨房龙头</a></h5>
+                </div>
+                <div class="list">
+                    <h5><a class="title" href="javascript:;">厨房净饮机系列</a></h5>
+                </div>
+            </li>
+            <li>
+                <div class="list"></div>
+            </li>
+            <li>
+                <div class="list list20">
+                    <h5><a class="images" href="${data.base_url}catalog/kitchen/new-product/">厨房新品</a></h5>
+                    <a href="javascript:;"><img src="${data.base_url}images/submenu4.jpg" alt=""></a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,736 @@
+<div class="pub_footer">
+    <div class="subnav">
+        <div class="layout about">
+            <h4>关于科勒</h4>
+            <ul>
+                <li><a href="javascript:;" rel="nofollow">关于我们</a></li>
+                <li><a href="contact.html" rel="nofollow">联系我们</a></li>
+                <li><a href="javascript:;" rel="nofollow">新闻中心</a></li>
+                <li><a href="support.html" rel="nofollow">售后支持</a></li>
+                <li><a href="javascript:;" rel="nofollow">招贤纳士</a></li>
+            </ul>
+        </div>
+        <div class="layout">
+            <h4><br/></h4>
+            <ul>
+                <li><a href="javascript:;" rel="nofollow">网站地图</a></li>
+                <li><a href="javascript:;" rel="nofollow">科勒全球</a></li>
+                <li><a href="javascript:;" rel="nofollow">法律声明</a></li>
+                <li><a href="javascript:;" rel="nofollow">隐私条款</a></li>
+                <li><a href="javascript:;" rel="nofollow">App下载</a></li>
+            </ul>
+        </div>
+        <div class="layout brand">
+            <h4>旗下品牌</h4>
+            <ul>
+                <li><a href="javascript:;" rel="nofollow">Sterling</a></li>
+                <li><a href="javascript:;" rel="nofollow">Kallista</a></li>
+                <li><a href="javascript:;" rel="nofollow">Ann Sacks</a></li>
+                <li><a href="javascript:;" rel="nofollow">Robern</a></li>
+            </ul>
+        </div>
+        <div class="layout media">
+            <h4>社交媒体</h4>
+            <ul>
+                <li class="blog"><a href="javascript:;" rel="nofollow"><i></i><span>新浪微博</span></a></li>
+                <li class="qqblog"><a href="javascript:;" rel="nofollow"><i></i><span>腾讯微博</span></a></li>
+                <li class="douban"><a href="javascript:;" rel="nofollow"><i></i><span>豆瓣网</span></a></li>
+                <li class="renren"><a href="javascript:;" rel="nofollow"><i></i><span>人人网</span></a></li>
+                <li class="qzone"><a href="javascript:;" rel="nofollow"><i></i><span>QQ空间</span></a></li>
+                <li class="wechat"><a href="javascript:;" rel="nofollow"><i></i><span>微信</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="pub_copyright">
+    <div class="copyright"><p>© Kohler Co. All Rights Reserved</p></div>
+</div>
+<!-- pub_footer end -->
+<div class="product_popup">
+	<div class="popup_register_panel find_password step_1">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_login_panel">
+            <div class="register_title forget_title">
+                <p class="title">用户验证</p>
+            </div>
+        </div>
+        <div class="regline500"></div>
+        <div class="forget_panel_bk"></div>
+        <form id="findpasswordidentify">
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">手机号码</label>
+                <span class="control-group" id="mobile_input">
+                <input type="text" class="label_input_bar" placeholder="" name="accountName"/>
+				</span>
+                <div class="btn_code send_identify_code">发送验证码</div>
+            </div>
+        </div>
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">验证码</label>
+                <span class="control-group" id="code_input">
+                <input type="text" class="label_input_bar" placeholder="" name="identifyCode"/>
+                </span>
+            </div>
+        </div>
+        </form>
+        <div class="register_btn_panel">
+            <div class="register_btn forget_btn btn_step1">下一步</div>    
+        </div>
+    </div>
+    <div class="popup_register_panel find_password step_2">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_login_panel">
+            <div class="register_title forget_title">
+                <p class="title">重置密码</p>
+            </div>
+        </div>
+        <div class="regline500"></div>
+        <div class="forget_panel_bk"></div>
+        <form id="findandcofirmpassword">
+        <input type="hidden" name="accountName">
+        <input type="hidden" name="identifyCode">
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">新密码</label>
+                <span class="control-group" id="first_password_input">
+                <input type="password" class="label_input_bar" placeholder="" name="password" id="firstpassowrd_input"/>
+            	</span>
+            </div>
+        </div>
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">再次确认</label>
+                <span class="control-group" id="confirm_password_input">
+                <input type="password" class="label_input_bar" placeholder="" id="confirmpassowrd_input"/>
+        		</span>
+        	</div>
+        </div>
+        </form>
+        <div class="register_btn_panel">
+            <div class="register_btn forget_btn btn_step2">下一步</div>  
+            <span class="operation-error" id="operation_error">验证码已过期</span>  
+        </div>        
+    </div>
+    <div class="popup_register_panel find_password step_3">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_login_panel">
+            <div class="register_title forget_title">
+                <p class="title">密码重置完成</p>
+            </div>
+        </div>
+        <div class="regline500"></div>
+        <div class="forget_panel_bk"></div>
+        <div class="success_content">
+            <p class="info">恭喜您！密码重置已完成，如您有其他任何疑问，请拨打免费服务热线<span class="tel_info">800-820-2628</span>，您将得到详尽满意的解答和体贴周到的服务。</p>
+        </div>     
+    </div>
+    <div class="popup_register_panel success consumer_success">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_login_panel">
+            <div class="register_title success_title">
+                <p class="title">科勒中国官网注册</p>
+            </div>
+        </div>
+        <div class="success700"></div>
+        <div class="success_content">
+            <p class="title">注册已成功</p>
+            <p class="info">感谢您长久以来对我们的关注与支持，您的宝贵意见将有助于我们<br />更好的为您提供最佳体验</p>
+            <img src="images/ticket.jpg" alt="" class="img_ticket">
+            <a href="javascript:;" class="link_tmall">访问科勒天猫旗舰店</a>
+        </div>
+        <div class="success700"></div>
+        <div class="register_btn_panel mb20">
+            <div class="register_btn confirm_btn">确定</div>    
+        </div>
+    </div>
+    <div class="popup_register_panel success member_success">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_login_panel">
+            <div class="register_title success_title">
+                <p class="title">科勒中国官网注册</p>
+            </div>
+        </div>
+        <div class="success700"></div>
+        <div class="success_content">
+            <p class="title">注册已成功</p>
+            <p class="info">感谢您长久以来对我们的关注与支持，您的宝贵意见将有助于我们<br />更好的为您提供最佳体验</p>
+        </div>
+        <div class="success700"></div>
+        <div class="register_btn_panel mb20">
+            <div class="register_btn confirm_btn">确定</div>    
+        </div>
+    </div>
+    <div class="popup_register_panel login">
+    <form id="login-form" isFreeze="http://localhost:8080/website-product/login/islogin.action" action="http://localhost:8080/website-product/login/dologin.action">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_login_panel">
+            <div class="register_title login_title">
+                <p class="title">科勒中国官网登录</p>
+                <p class="info">感谢您长久以来对我们的关注与支持，您的宝贵意见将有助于我们<br />更好的为您提供最佳体验</p>
+            </div>
+        </div>
+        <div class="regline500"></div>
+        <div class="register_panel w400 clearfix">
+            <div class="register_content w400 clearfix">
+                <div class="register_label">
+                    <label class="label_txt">账号：</label>
+                    <input type="text" class="label_input_bar username"  name="userName" data-validate="{required:true}" placeholder="请输入账号" />
+                </div>
+            </div>
+            <div class="register_content w400 clearfix">
+                <div class="register_label">
+                    <label class="label_txt">密码：</label>
+                    <input type="text" class="label_input_bar password"  name="password" data-validate="{required:true}"  placeholder="请输入密码" />
+                </div>
+            </div>
+            <a class="title forget">忘记登录密码？</a>
+        </div>
+        <div class="regline500"></div>
+        <div class="register_btn_panel mb0">
+            <div class="login_btn" id="login_btn_form" >登录</div>    
+        </div>
+        </form>
+    </div>
+    <div class="popup_register_panel reg_consumer">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_title">
+            <p class="title">科勒中国官网注册</p>
+            <p class="info">欢迎注册科勒官方网站，浏览图片集，探索新趋势，<br />获取您所需要的产品信息</p>
+        </div>
+        <div class="popup_reg_content">
+            <div class="register_panel clearfix">
+                <div class="register_left">
+                    <p class="title"><b>请选择你的账户种类</b></p>
+                    <p class="title2">您是？</p>
+                    <a href="javascript:;" data-type="reg_consumer" class="account_type choose">消费者<div class="register_arrow"></div></a>
+                    <a href="javascript:;" data-type="reg_home" class="account_type">家装设计师</a>
+                    <a href="javascript:;" data-type="reg_business" class="account_type">工装设计师</a>
+                    <a href="javascript:;" data-type="reg_developer" class="account_type">开发商</a>
+                    <a href="javascript:;" data-type="member" class="account_type member">雅悦荟会员</a>
+                </div>
+                <div class="register_ver_line l364"></div>
+                   <div class="register_right">
+                    <p class="title mb18"><b>请根据提示填写您的个人信息&nbsp;“<span class="mark"> * </span>”&nbsp;为必填项</b></p>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">手机号码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确手机号码" />
+                            <div class="btn_code">发送验证码</div>
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">验证码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入手机中收到的验证码" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">登录密码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入登录密码" />
+                        </div>
+                    </div>
+                    
+                    <div class="register_content clearfix z1">
+                        <div class="register_label z2">
+                            <label class="label_txt">所在区域</label>
+                            <div class="search province">
+                                <p>您所在的省份</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">省份1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份7</a></li>
+                                </ul>
+                            </div>
+                            <div class="search city">
+                                <p>您所在的省份</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">城市1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市7</a></li>
+                                </ul>
+                            </div>
+                            <div class="search area">
+                                <p>您所在的区域</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">城市1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市7</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <input type="text" class="label_input_bar" placeholder="详细地址" />
+                        </div>
+                    </div>
+                    <div class="register_content mb0 clearfix mb0">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">我已阅读并同意 <a class="link_agree" href="javascript:;">科勒中国官网服务协议</a></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="regline700 mt30"></div>
+            <div class="register_btn_panel">
+                <div class="register_btn consumer_login_btn">注册</div>    
+            </div>
+        </div>
+    </div>
+    <div class="popup_register_panel reg_home">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_title">
+            <p class="title">科勒中国官网注册</p>
+            <p class="info">欢迎注册科勒官方网站，浏览图片集，探索新趋势，<br />获取您所需要的产品信息</p>
+        </div>
+        <div class="popup_reg_content">
+            <div class="register_panel clearfix">
+                <div class="register_left">
+                    <p class="title"><b>请选择你的账户种类</b></p>
+                    <p class="title2">您是？</p>
+                    <a href="javascript:;" data-type="reg_consumer" class="account_type">消费者</a>
+                    <a href="javascript:;" data-type="reg_home" class="account_type choose">家装设计师<div class="register_arrow"></div></a>
+                    <a href="javascript:;" data-type="reg_business" class="account_type">工装设计师</a>
+                    <a href="javascript:;" data-type="reg_developer" class="account_type">开发商</a>
+                    <a href="javascript:;" data-type="member" class="account_type member">雅悦荟会员</a>
+                </div>
+                <div class="register_ver_line l408"></div>
+                <div class="register_right">
+                    <p class="title mb18"><b>请根据提示填写您的个人信息&nbsp;“<span class="mark"> * </span>”&nbsp;为必填项</b></p>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">手机号码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确手机号码" />
+                            <div class="btn_code">发送验证码</div>
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">验证码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入手机中收到的验证码" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">登录密码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入登录密码" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入有效的邮箱地址" />
+                        </div>
+                    </div>
+                    <div class="register_content pt3 clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">新品发布</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">促销信息</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">活动资讯</label>
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">就职公司</label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确的公司电话" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix z1">
+                        <div class="register_label z2">
+                            <label class="label_txt">公司地址</label>
+                            <div class="search province">
+                                <p>您所在的省份</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">省份1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份7</a></li>
+                                </ul>
+                            </div>
+                            <div class="search city">
+                                <p>您所在的省份</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">城市1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市7</a></li>
+                                </ul>
+                            </div>
+                            <div class="search area">
+                                <p>您所在的区域</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">城市1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市7</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <input type="text" class="label_input_bar" placeholder="详细地址" />
+                        </div>
+                    </div>
+                    <div class="register_content mb0 clearfix mb0">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">我已阅读并同意 <a class="link_agree" href="javascript:;">科勒中国官网服务协议</a></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="regline700 mt30"></div>
+            <div class="register_btn_panel">
+                <div class="register_btn">注册</div>    
+            </div>
+        </div>
+    </div>
+    <div class="popup_register_panel reg_business">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_title">
+            <p class="title">科勒中国官网注册</p>
+            <p class="info">欢迎注册科勒官方网站，浏览图片集，探索新趋势，<br />获取您所需要的产品信息</p>
+        </div>
+        <div class="popup_reg_content">
+            <div class="register_panel clearfix">
+                <div class="register_left">
+                    <p class="title"><b>请选择你的账户种类</b></p>
+                    <p class="title2">您是？</p>
+                    <a href="javascript:;" data-type="reg_consumer" class="account_type">消费者</a>
+                    <a href="javascript:;" data-type="reg_home" class="account_type">家装设计师</a>
+                    <a href="javascript:;" data-type="reg_business" class="account_type choose">工装设计师<div class="register_arrow"></div></a>
+                    <a href="javascript:;" data-type="reg_developer" class="account_type">开发商</a>
+                    <a href="javascript:;" data-type="member" class="account_type member">雅悦荟会员</a>                    
+                </div>
+                <div class="register_ver_line l408"></div>
+                <div class="register_right">
+                    <p class="title mb18"><b>请根据提示填写您的个人信息&nbsp;“<span class="mark"> * </span>”&nbsp;为必填项</b></p>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">手机号码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确手机号码" />
+                            <div class="btn_code">发送验证码</div>
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">验证码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入手机中收到的验证码" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">登录密码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入登录密码" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入有效的邮箱地址" />
+                        </div>
+                    </div>
+                    <div class="register_content pt3 clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">新品发布</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">促销信息</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">活动资讯</label>
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">公司电话</label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确的公司电话" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix z1">
+                        <div class="register_label z2">
+                            <label class="label_txt">公司地址</label>
+                            <div class="search province">
+                                <p>您所在的省份</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">省份1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份7</a></li>
+                                </ul>
+                            </div>
+                            <div class="search city">
+                                <p>您所在的省份</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">城市1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市7</a></li>
+                                </ul>
+                            </div>
+                            <div class="search area">
+                                <p>您所在的区域</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">城市1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市7</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <input type="text" class="label_input_bar" placeholder="详细地址" />
+                        </div>
+                    </div>
+                    <div class="register_content mb0 clearfix mb0">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">我已阅读并同意 <a class="link_agree" href="javascript:;">科勒中国官网服务协议</a></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="regline700 mt30"></div>
+            <div class="register_btn_panel">
+                <div class="register_btn">注册</div>    
+            </div>
+        </div>
+    </div>
+    <div class="popup_register_panel reg_developer">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_title">
+            <p class="title">科勒中国官网注册</p>
+            <p class="info">欢迎注册科勒官方网站，浏览图片集，探索新趋势，<br />获取您所需要的产品信息</p>
+        </div>
+        <div class="popup_reg_content">
+            <div class="register_panel clearfix">
+                <div class="register_left">
+                    <p class="title"><b>请选择你的账户种类</b></p>
+                    <p class="title2">您是？</p>
+                    <a href="javascript:;" data-type="reg_consumer" class="account_type">消费者</a>
+                    <a href="javascript:;" data-type="reg_home" class="account_type">家装设计师</a>
+                    <a href="javascript:;" data-type="reg_business" class="account_type">工装设计师</a>
+                    <a href="javascript:;" data-type="reg_developer" class="account_type choose">开发商<div class="register_arrow"></div></a>
+                    <a href="javascript:;" data-type="member" class="account_type member">雅悦荟会员</a> 
+                </div>
+                <div class="register_ver_line l595"></div>
+                <div class="register_right">
+                    <p class="title mb18"><b>请根据提示填写您的个人信息&nbsp;“<span class="mark"> * </span>”&nbsp;为必填项</b></p>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">手机号码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确手机号码" />
+                            <div class="btn_code">发送验证码</div>
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">验证码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入手机中收到的验证码" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">登录密码<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入登录密码" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入有效的邮箱地址" />
+                        </div>
+                    </div>
+                    <div class="register_content pt3 clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">新品发布</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">促销信息</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">活动资讯</label>
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">公司名称<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确的公司电话" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门<span class="mark"> * </span></label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确的公司电话" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">公司电话</label>
+                            <input type="text" class="label_input_bar" placeholder="请输入正确的公司电话" />
+                        </div>
+                    </div>
+                    <div class="register_content clearfix z1">
+                        <div class="register_label z2">
+                            <label class="label_txt">公司地址</label>
+                            <div class="search province">
+                                <p>您所在的省份</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">省份1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">省份7</a></li>
+                                </ul>
+                            </div>
+                            <div class="search city">
+                                <p>您所在的省份</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">城市1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市7</a></li>
+                                </ul>
+                            </div>
+                            <div class="search area">
+                                <p>您所在的区域</p>
+                                <ul class="select-panel clearfix">
+                                    <li class="option" value=""><a href="javascript:;">城市1</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市2</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市3</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市4</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市5</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市6</a></li>
+                                    <li class="option" value=""><a href="javascript:;">城市7</a></li>
+                                </ul>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="register_content clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <input type="text" class="label_input_bar" placeholder="详细地址" />
+                        </div>
+                    </div>
+                    <div class="register_content pt3 clearfix">
+                        <div class="register_label">
+                            <label class="label_txt">您喜欢的<br />运动</label>
+                            <div class="register_select_bar clearfix">
+                                <div class="icon_select"></div>
+                                <label class="select_txt">高尔夫</label>
+                                <div class="icon_select"></div>
+                                <label class="select_txt">跑步</label>
+                                <div class="icon_select"></div>
+                                <label class="select_txt mr0">网球</label>
+                            </div>
+                            <div class="register_select_bar clearfix">
+                                <div class="icon_select"></div>
+                                <label class="select_txt">足球</label>
+                                <div class="icon_select"></div>
+                                <label class="select_txt">篮球</label>
+                                <div class="icon_select"></div>
+                                <label class="select_txt mr0">羽毛球</label>
+                            </div>
+                            <div class="register_select_bar clearfix">
+                                <div class="icon_select"></div>
+                                <label class="select_txt mr0">其他</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="register_content mb0 clearfix mb0">
+                        <div class="register_label">
+                            <label class="label_txt">&nbsp;</label>
+                            <div class="icon_select"></div>
+                            <label class="select_txt">我已阅读并同意 <a class="link_agree" href="javascript:;">科勒中国官网服务协议</a></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="regline700 mt30"></div>
+            <div class="register_btn_panel">
+                <div class="register_btn">注册</div>    
+            </div>
+        </div>
+    </div>
+    <div class="popup_register_panel member">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_title">
+            <p class="title">科勒中国官网注册</p>
+            <p class="info">欢迎注册科勒官方网站，浏览图片集，探索新趋势，<br />获取您所需要的产品信息</p>
+        </div>
+        <div class="popup_reg_content">
+            <div class="register_panel clearfix">
+                <div class="register_left">
+                    <p class="title"><b>请选择你的账户种类</b></p>
+                    <p class="title2">您是？</p>
+                    <a href="javascript:;" data-type="reg_consumer" class="account_type">消费者</a>
+                    <a href="javascript:;" data-type="reg_home" class="account_type">家装设计师</a>
+                    <a href="javascript:;" data-type="reg_business" class="account_type">工装设计师</a>
+                    <a href="javascript:;" data-type="reg_developer" class="account_type">开发商</a>
+                    <a href="javascript:;" data-type="member" class="account_type member">雅悦荟会员<div class="register_arrow"></div></a> 
+                </div>
+                <div class="register_ver_line l364"></div>
+                <div class="register_right">
+                    <div class="member_bar">
+                        <img src="images/member1.jpg" alt="">
+                        <p class="info">尊敬的雅悦荟会员，感谢长久以来您对我们的关注与支持，我们已通过邮件向您发出邀请，请您查收邮件、验证身份，开启会员尊享之旅。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

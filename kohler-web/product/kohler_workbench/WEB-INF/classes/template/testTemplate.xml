@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template id="10001" name="testTemplate">
+	<Field name="name" type="text" area="left" complicated="0">
+		<check>
+			<maxsize>10</maxsize>
+			<require>false</require>
+		</check>
+	</Field>
+
+	<Field name="description" type="textarea" area="left" complicated="0">
+		
+	</Field>
+	
+	
+	<Field name="colorName" type="radio" option="4" area="right" complicated="0">
+		<value>black</value>
+		<value>white</value>
+		<value>red</value>
+		<value>blue</value>
+	</Field>
+
+	<Field name="city" type="select" option="4" area="center" complicated="0">
+		<value>shanghai</value>
+		<value>beijing</value>
+		<value>guangzhou</value>
+		<value>lasa</value>
+	</Field>
+
+	<Field name="size" type="checkbox" option="4" area="left" complicated="0">
+		<value>1</value>
+		<value>2</value>
+		<value>3</value>
+		<value>4</value>
+	</Field>
+	
+	<Field name="showroom location" type="showroom location" area="left" complicated="10002">
+	</Field>
+	
+</Template>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="productListData" param="@category_metadata_id,@template_type,@lang">
+
+	<!-- 面包屑 -->
+	<!-- <funcdata name="breadcrumb_name" from="getBreadcrumb" />-->
+	<!-- seo信息 -->
+	<data name="seo" tableName="VW_CATEGORY" filter="CATEGORY_METADATA_ID=@category_metadata_id AND LANG=@lang">
+		<field name="seo_title" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_TITLE_PC, SEO_TITLE_MOBILE)"/>
+		<field name="seo_keywords" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_KEYWORDS_PC, SEO_KEYWORDS_MOBILE)"/>
+		<field name="seo_description" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_DESCRIPTION_PC, SEO_DESCRIPTION_MOBILE)"/>
+	</data>
+	<!-- 子分类 -->
+	 <multidata name="Categories" keyName="CATEGORY_METADATA_ID" tableName="VW_CATEGORY" filter="PARENT_ID=@category_metadata_id AND LANG=@lang ORDER BY SEQ_NO,CATEGORY_ID">
+		<field name="category_name" fieldType="physicalValue" fieldName="CATEGORY_NAME"/>
+		<field name="category_id" fieldType="physicalValue" fieldName="CATEGORY_ID"/>
+		<field name="category_metadata_id" fieldType="physicalValue" fieldName="CATEGORY_METADATA_ID"/>
+		<field name="template_id"  fieldType="physicalValue" fieldName="IF(@template_type = 'pc', PC_TEMPLATE_ID, MOBILE_TEMPLATE_ID)" />
+		<field name="url" fieldType="urlValue" dependOn="category_metadata_id"  service="categoryUrlAnalysis" />
+			<!-- bunner_unit -->
+			<multidata name="banner_units" contentType="CONTENT_FIELD_VALUES" sqlResource="SELECT FIELD_VALUE,FIELD_NAME ,unit.CATEGORY_METADATA_ID,cv.CONTENT_METADATA_ID 
+		  FROM CONTENT_FIELD_VALUES cv LEFT JOIN CATEGORY_BANNER_UNIT unit ON cv.CONTENT_METADATA_ID = unit.BANNER_UNIT_METADATA_ID 
+		   WHERE unit.IS_ENABLE=1 AND cv.IS_ENABLE=1 AND cv.LANG =1 AND unit.CATALOG_METADATA_ID=@category_metadata_id AND unit.CATEGORY_METADATA_ID = @@CATEGORY_METADATA_ID ORDER BY unit.SEQ_NO,unit.CATEGORY_BANNER_UNIT_ID">
+				 <field name="FIELD_NAME"  fieldType="physicalValue" fieldName="FIELD_NAME" />
+				 <field name="FIELD_VALUE"  fieldType="physicalValue" fieldName="FIELD_VALUE" />
+				 <field name="CONTENT_METADATA_ID"  fieldType="physicalValue" fieldName="CONTENT_METADATA_ID" />
+				 <map name="CONTENT_FIELD_VALUES">
+					<field name="seq_no"  fieldName="SeqNo"/>
+					<field name="description"  fieldName="Description"/>
+					<field name="operation"  fieldName="Operation"/>
+					<field name="file_id"  fieldName="File Id"/>
+					<field name="type"  fieldName="Type"/>
+					<field name="target_url"  fieldName="Target URL"/>
+					<field name="image_overlay_text"  fieldName="Image Overlay Text"/>
+					<field name="image_alt"  fieldName="Image Alt"/>
+					<field name="title"  fieldName="Title"/>
+				</map>
+			</multidata>
+	</multidata> 
+	
+	<!-- hero_areas -->
+	<multidata name="hero_areas" contentType="CONTENT_FIELD_VALUES" sqlResource="SELECT FIELD_VALUE,FIELD_NAME ,area.CATEGORY_METADATA_ID,cv.CONTENT_METADATA_ID 
+	  FROM CONTENT_FIELD_VALUES cv LEFT JOIN CATEGORY_HERO_AREA area ON cv.CONTENT_METADATA_ID = area.HERO_AREA_METADATA_ID 
+	   WHERE area.IS_ENABLE=1 AND cv.IS_ENABLE=1 AND cv.LANG =@lang AND area.CATEGORY_METADATA_ID=@category_metadata_id ORDER BY area.SEQ_NO,area.CATEGORY_HERO_AREA_ID">
+		 <field name="FIELD_NAME"  fieldType="physicalValue" fieldName="FIELD_NAME" />
+		 <field name="FIELD_VALUE"  fieldType="physicalValue" fieldName="FIELD_VALUE" />
+		 <field name="CONTENT_METADATA_ID"  fieldType="physicalValue" fieldName="CONTENT_METADATA_ID" />
+		 <map name="CONTENT_FIELD_VALUES">
+			<field name="seq_no"  fieldName="SeqNo"/>
+			<field name="operation"  fieldName="Operation"/>
+			<field name="target_url"  fieldName="Target URL"/>
+			<field name="image_overlay_text"  fieldName="Image Overlay Text"/>
+			<field name="image_alt"  fieldName="Image Alt"/>
+			<field name="image_url"  fieldName="Image Id"/>
+			<field name="title"  fieldName="Title"/>
+		</map>
+	</multidata>
+	
+	<!-- Suites -->
+	<multidata name="suites" sqlResource="SELECT SUITE_ID,IMAGE_SOURCE,LIST_IMAGE_URL,LIST_IMAGE_ID,LIST_IMAGE_ALT,
+	CATEGORY_METADATA_ID,IF(@template_type = 'pc', PC_TEMPLATE_ID, MOBILE_TEMPLATE_ID) AS TEMPLATE_ID FROM VW_SUITE WHERE LANG=@lang AND CATEGORY_METADATA_ID = @category_metadata_id ORDER BY SEQ_NO,SUITE_ID">
+		<field name="image_source" fieldType="physicalValue" fieldName="IMAGE_SOURCE"/>
+		<field name="list_image_url" fieldType="physicalValue" fieldName="LIST_IMAGE_URL"/>
+		<field name="list_image_id" fieldType="physicalValue" fieldName="LIST_IMAGE_ID"/>
+		<field name="list_image_alt" fieldType="physicalValue" fieldName="LIST_IMAGE_ALT"/>
+		<field name="category_metadata_id" fieldType="physicalValue" fieldName="CATEGORY_METADATA_ID"/>
+		<field name="template_id" fieldType="physicalValue" fieldName="TEMPLATE_ID"/>
+		<field name="suite_id" fieldType="physicalValue" fieldName="SUITE_ID"/>
+		<field name="url" fieldType="urlValue" dependOn="template_id" service="suiteUrlAnalysis"/>
+	</multidata>
+	
+	<!-- 新品BannerUnit -->
+	<multidata name="new_arrival" contentType="CONTENT_FIELD_VALUES" sqlResource="SELECT
+	FIELD_VALUE,
+	FIELD_NAME,
+	cv.CONTENT_METADATA_ID
+FROM
+	CONTENT_FIELD_VALUES cv
+LEFT JOIN NEW_ARRIVAL_BANNER_UNIT unit ON cv.CONTENT_METADATA_ID = unit.BANNER_UNIT_METADATA_ID
+LEFT JOIN NEW_ARRIVAL_METADATA nw ON unit.NEW_ARRIVAL_METADATA_ID = nw.NEW_ARRIVAL_METADATA_ID
+WHERE
+	unit.IS_ENABLE = 1
+AND cv.IS_ENABLE = 1
+AND cv.LANG = @lang
+AND nw.CATEGORY_METADATA_ID = @category_metadata_id
+ORDER BY
+	unit.SEQ_NO,
+	unit.BANNER_UNIT_METADATA_ID">
+		<field name="FIELD_NAME"  fieldType="physicalValue" fieldName="FIELD_NAME" />
+		<field name="FIELD_VALUE"  fieldType="physicalValue" fieldName="FIELD_VALUE" />
+		<field name="CONTENT_METADATA_ID"  fieldType="physicalValue" fieldName="CONTENT_METADATA_ID" />
+		<map name="CONTENT_FIELD_VALUES">
+			<field name="title"  fieldName="Title"/>
+			<field name="type"  fieldName="Type"/>
+			<field name="file_id"  fieldName="File Id"/>
+			<field name="image_alt"  fieldName="Image Alt"/>
+			<field name="image_overlay_text"  fieldName="Image Overlay Text"/>
+			<field name="description"  fieldName="Description"/>
+		</map>
+	</multidata>
+	
+</page>

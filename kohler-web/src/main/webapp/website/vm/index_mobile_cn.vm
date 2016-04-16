@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-cn">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta name="applicable-device" content="mobile">
+    <link rel="stylesheet" type="text/css" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.bxslider.css">
+    <link rel="stylesheet" type="text/css" href="css/mobile.css">
+    <link rel="stylesheet" href="css/global.css" />
+    #parse("style_mobile.vm")
+    <title>KOLHER</title>
+</head>
+<body class="home">
+<!-- pub_header start -->
+#parse("header_mobile_cn.vm")
+<!-- pub_header end -->
+<!-- pub_banner start -->
+
+    <div class="banner jsBanner">
+        <ul class="slider-bd slider">
+            <li><a href="#"><img src="images/bannertest2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="images/bannertest1.jpg" alt=""></a></li>
+        </ul>
+    </div>
+
+    <div class="show">
+        <div class="container">
+            <img src="images/test2.jpg" />
+        </div>
+        <div class="text">
+            <h1>ROSE GOLD Suite<br />玫瑰金 套间</h1>
+            <p>岁月流转，时尚易逝，我们一直在思考，怎样一种色彩，才能适应时代流行，又不随年华褪色。</p>
+        </div>
+    </div>
+    <div class="show">
+        <div class="container">
+            <img src="images/test2.jpg" />
+        </div>
+        <div class="text">
+            <h1>ROSE GOLD Suite<br />玫瑰金 套间</h1>
+            <p>岁月流转，时尚易逝，我们一直在思考，怎样一种色彩，才能适应时代流行，又不随年华褪色。</p>
+        </div>
+    </div>
+    <div class="show">
+        <div class="container">
+            <img src="images/test2.jpg" />
+        </div>
+        <div class="text">
+            <h1>ROSE GOLD Suite<br />玫瑰金 套间</h1>
+            <p>岁月流转，时尚易逝，我们一直在思考，怎样一种色彩，才能适应时代流行，又不随年华褪色。</p>
+        </div>
+    </div>
+    <div class="show">
+        <div class="container">
+            <img src="images/test2.jpg" />
+        </div>
+        <div class="text">
+            <h1>ROSE GOLD Suite<br />玫瑰金 套间</h1>
+            <p>岁月流转，时尚易逝，我们一直在思考，怎样一种色彩，才能适应时代流行，又不随年华褪色。</p>
+        </div>
+    </div>
+    <div class="show">
+        <div class="container">
+            <img src="images/test2.jpg" />
+        </div>
+        <div class="text">
+            <h1>ROSE GOLD Suite<br />玫瑰金 套间</h1>
+            <p>岁月流转，时尚易逝，我们一直在思考，怎样一种色彩，才能适应时代流行，又不随年华褪色。</p>
+        </div>
+    </div>
+    <div class="show">
+        <div class="container">
+            <img src="images/test2.jpg" />
+        </div>
+        <div class="text">
+            <h1>ROSE GOLD Suite<br />玫瑰金 套间</h1>
+            <p>岁月流转，时尚易逝，我们一直在思考，怎样一种色彩，才能适应时代流行，又不随年华褪色。</p>
+        </div>
+    </div>
+    <div class="show">
+        <div class="container">
+            <img src="images/test2.jpg" />
+        </div>
+        <div class="text">
+            <h1>ROSE GOLD Suite<br />玫瑰金 套间</h1>
+            <p>岁月流转，时尚易逝，我们一直在思考，怎样一种色彩，才能适应时代流行，又不随年华褪色。</p>
+        </div>
+    </div>
+    <div class="review">
+        <h5>探索科勒无限可能</h5>
+        <div class="con">
+            <img src="images/test5.jpg" />
+            <img class="view" src="images/view.png" />
+        </div>
+    </div>
+    
+    
+<!-- pub_totop end -->
+<!-- pub_footer start -->
+#parse("footer_mobile_cn.vm")
+    <script src="js/jquery-1.10.1.min.js" type="text/javascript"></script>
+    <script src="js/jquery.bxslider.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/nav.js"></script>
+</body>
+</html>

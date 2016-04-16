@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Cache-Control" content="max-age=300"/>
+    <meta name='keywords' content='$!{data.seo.get(0).seo_keywords}'/>
+    <meta name='description' content='$!{data.seo.get(0).seo_description}'/>
+    <meta name="applicable-device" content="pc">
+  #parse("style.vm")
+
+    <title>$!{data.seo.get(0).seo_title}</title>
+	
+</head>
+<body>
+
+<div class="head_wrapper">
+  #parse("header_pc_cn.vm")
+    <div class="pub_subnav">
+        <div class="pub_subnav_warp collection_warp">
+			#if(${data.suites})
+			<ul class="clearfix">
+				#foreach($suites in ${data.suites})
+                <li index="collection_list$velocityCount">$!{suites.name}</li>
+				#end
+            </ul>
+			#end
+         
+            <div class="clearfix"></div>
+        </div>
+<!--         <div class="pub_subnav_arrow">
+            <div class="arrow_bottom"></div>
+        </div> -->
+    </div>
+    <div class="pub_subnav_arrow">
+        <div class="arrow_bottom"></div>
+    </div>
+    
+</div>
+<div class="content_wrapper">
+
+#if(${data.suites})		
+#foreach($suites in ${data.suites})
+	#if(${suites.list_content})
+	<div class="brand_content" id="collection_list$velocityCount">
+	${suites.list_content}
+	</div>
+	<div class="line_full"></div>
+	#end
+#end
+#end
+
+
+
+
+
+
+
+<div class="pub_totop">
+    <div class="totop_btn"><img src="$!{data.base_url}images/totop.png" alt=""></div>
+    <span>返回顶部</span>
+</div>
+#parse("footer_pc_cn.vm")
+</body>
+</html>

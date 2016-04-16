@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="kohler-web">
+        <wb-resource deploy-path="/" source-path="/sf/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/test/resources"/>
+        <dependent-module archiveName="kohler-account-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-account/kohler-account">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-framework-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-framework/kohler-framework">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-persistent-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-persistent/kohler-persistent">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-common-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-common/kohler-common">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-content-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-content/kohler-content">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-fileasset-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-fileasset/kohler-fileasset">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-product-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-product/kohler-product">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-report-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-report/kohler-report">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-search-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-search/kohler-search">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-section-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-section/kohler-section">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-admin-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-admin/kohler-admin">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-home-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-home/kohler-home">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="kohler-publish-0.0.1.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/kohler-publish/kohler-publish">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <property name="java-output-path" value="/kohler-web/target/classes"/>
+        <property name="context-root" value="kohler_workbench"/>
+    </wb-module>
+</project-modules>

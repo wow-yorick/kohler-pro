@@ -1,0 +1,11 @@
+	<link type="text/css" href="${data.base_url}css/main.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${data.base_url}js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/sly.min.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/product.js" async="async"></script>
+    <script type="text/javascript" src="${data.base_url}js/resize.js" async="async"></script>
+    <script type="text/javascript" src="${data.base_url}js/rotation.js" async="async"></script>
+    <script type="text/javascript" src="${data.base_url}js/search.js" async="async"></script>
+    <script type="text/javascript" src="${data.base_url}js/index.js"></script>
+    <link href="${data.base_url}css/video-js.css" rel="stylesheet" type="text/css" >
+    <script type='text/javascript' src='${data.base_url}js/global.js' ></script>
+	<script type='text/javascript' src='${data.base_url}js/video.js'></script>

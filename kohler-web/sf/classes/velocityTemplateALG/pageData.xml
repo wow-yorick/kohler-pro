@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="pageData" param="@page_id,@template_type,@lang">
+<funcdata name="pageGeneralData" from="pageGeneralData">
+	<map name="seo" fieldName="SEO">
+		<field name="seo_description"  fieldName="SEO_TITLE"/>
+		<field name="seo_keywords"  fieldName="SEO_KEYWORDS"/>
+		<field name="seo_title"  fieldName="SEO_DESCRIPTION"/>
+	</map>
+	<map name="hero_areas" fieldName="Hero Areas">
+		<field name="seq_no"  fieldName="SeqNo"/>
+		<field name="operation"  fieldName="Operation"/>
+		<field name="target_url"  fieldName="Target URL"/>
+		<field name="image_overlay_text"  fieldName="Image Overlay Text"/>
+		<field name="image_alt"  fieldName="Image Alt"/>
+		<field name="image_url"  fieldName="Image Id"/>
+		<field name="title"  fieldName="Title"/>
+		<field name="type"  fieldName="Type"/>
+		<field name="video_url"  fieldName="Video URL"/>
+	</map>
+	
+	<map name="hot_spots" fieldName="Hot Spots">
+		<field name="seq_no"  fieldName="SeqNo"/>
+		<field name="image_id"  fieldName="Image Id"/>
+		<field name="content"  fieldName="Content"/>
+		<field name="title"  fieldName="Title"/>
+	</map>
+	
+	<map name="banner_units" fieldName="Banner Units">
+		<field name="seq_no"  fieldName="SeqNo"/>
+		<field name="description"  fieldName="Description"/>
+		<field name="operation"  fieldName="Operation"/>
+		<field name="file_id"  fieldName="File Id"/>
+		<field name="type"  fieldName="Type"/>
+		<field name="target_url"  fieldName="Target URL"/>
+		<field name="image_overlay_text"  fieldName="Image Overlay Text"/>
+		<field name="image_alt"  fieldName="Image Alt"/>
+		<field name="title"  fieldName="Title"/>
+		<field name="type"  fieldName="Type"/>
+		<field name="video_url"  fieldName="Video URL"/>
+	</map>
+	
+	<map name="news" fieldName="News">
+		<field name="seq_no"  fieldName="SeqNo"/>
+		<field name="description"  fieldName="Description"/>
+		<field name="operation"  fieldName="Operation"/>
+		<field name="file_id"  fieldName="File Id"/>
+		<field name="type"  fieldName="Type"/>
+		<field name="target_url"  fieldName="Target URL"/>
+		<field name="image_overlay_text"  fieldName="Image Overlay Text"/>
+		<field name="image_alt"  fieldName="Image Alt"/>
+		<field name="title"  fieldName="Title"/>
+		<field name="type"  fieldName="Type"/>
+		<field name="video_url"  fieldName="Video URL"/>
+	</map>
+	
+	<map name="news" fieldName="News">
+		<field name="image_id"  fieldName="Image Id"/>
+		<field name="date"  fieldName="Date"/>
+		<field name="title"  fieldName="Title"/>
+		<field name="image_url"  fieldName="Image URL"/>
+		<field name="image_alt"  fieldName="Image Alt"/>
+		<field name="image_source"  fieldName="Image Source"/>
+		<field name="content"  fieldName="Content"/>
+	</map>
+	
+	<map name="article" fieldName="Article">
+		<field name="image_id"  fieldName="Image Id"/>
+		<field name="date"  fieldName="Date"/>
+		<field name="title"  fieldName="Title"/>
+		<field name="image_url"  fieldName="Image URL"/>
+		<field name="image_alt"  fieldName="Image Alt"/>
+		<field name="image_source"  fieldName="Image Source"/>
+		<field name="content"  fieldName="Content"/>
+	</map>
+</funcdata>
+</page>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Cache-Control" content="max-age=300"/>
+    <meta name='keywords' content='$!{seo_keywords}&nbsp;'/>
+    <meta name='description' content='$!{seo_description}&nbsp;'/>
+    <meta name="applicable-device" content="pc">
+   #parse("style.vm")
+    <title>$!{seo_title}&nbsp;</title>
+</head>
+<body>
+<div class="head_wrapper">
+    
+    #parse("headFile.vm")
+    <div class="pub_submenu page_menu clearfix">
+        <div class="submenu_panel bread actived">
+            <div class="bread_panel clearfix">
+				#if(${data.breadcrumb_name})
+				<a class="bread_link" href="index.html">首页</a>
+				#foreach($breadcrumb_name in ${data.breadcrumb_name})
+				<div class="bread_link" ><img src="${data.base_url}images/arrow2.png" alt=""></div>
+				 <a class="bread_link" href="${breadcrumb_name.url}">${breadcrumb_name.name}</a>
+				#end
+				#end
+            </div>
+            <div class="favorite2"></div>
+            <div class="print"></div>
+            <div class="share"></div>
+        </div>
+    </div>
+    <div class="pub_search">
+        <div class="pub_searchpanel">
+            <div class="pub_searchbar">
+                <input type="text" placeholder="请输入关键字或产品代码" />
+                <div class="pub_searchicon"></div>
+            </div>
+            <div class="pub_searchhistory">
+                <ul>
+                    <li>艾贝</li>
+                    <li>艾葆绰</li>
+                    <li>艾黛儿</li>
+                    <li>艾斯格尔独立套间</li>
+                </ul>
+                <div class="pub_searchall">查看所有搜索结果</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content_wrapper">
+<div class="pub_banner product">
+    <div class="subwrapper">
+        <div class="bgimg actived" style=""><img src="${data.base_url}images/detail_bk1.jpg"></div>
+		$!{hotspot.get('content')}&nbsp;
+    </div>
+</div>
+<div class="product_list collection_details clearfix">
+    <div class="right clearfix">
+        <h2>$!{productcategory.get('breadcrumb_name')}&nbsp;</h2>
+        <div class="search">
+            <p>排列方式</p>
+            <ul class="select-panel clearfix">
+                <li class="option" value="">排列方式1</li>
+                <li class="option" value="">排列方式2</li>
+                <li class="option" value="">排列方式3</li>
+                <li class="option" value="">排列方式4</li>
+                <li class="option" value="">排列方式5</li>
+                <li class="option" value="">排列方式6</li>
+                <li class="option" value="">排列方式7</li>
+            </ul>
+        </div>
+        <ul class="item-panel">
+			#if(${data.suite})
+			#foreach($suite in ${data.suite})
+			#if(${velocityCount}==1 || ${velocityCount}==3)
+            <li class="cate1">
+			#else
+			<li>
+			#end
+			<a href="$!{suite.target_url}#">
+                <div class="item_img"><img src="$!{suite.list_image_url}" alt="$!{suite.get($suiteproduct).image_alt}#"></div>
+                ${suite.image_overlay_text}
+                </a>
+            </li>
+           #end
+           #end
+           
+        </ul>
+    </div>
+</div>
+<div class="pub_totop">
+    <div class="totop_btn"><img src="images/totop.png" alt=""></div>
+    <span>返回顶部</span>
+</div>
+#parse("footFile.vm")
+</div>
+</body>
+</html>

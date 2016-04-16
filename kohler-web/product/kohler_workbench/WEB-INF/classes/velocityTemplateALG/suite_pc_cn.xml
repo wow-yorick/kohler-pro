@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="suiteData" param="@suite_metadata_id,@template_type,@lang">
+	<!-- 面包屑 -->
+	<funcdata name="breadcrumb_name" from="getBreadcrumb" />
+
+	<!-- seo信息 -->
+	<data name="seo" tableName="VW_SUITE" filter="SUITE_METADATA_ID=@suite_metadata_id AND LANG=@lang">
+		<field name="seo_title" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_TITLE_PC, SEO_TITLE_MOBILE)"/>
+		<field name="seo_keywords" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_KEYWORDS_PC, SEO_KEYWORDS_MOBILE)"/>
+		<field name="seo_description" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_DESCRIPTION_PC, SEO_DESCRIPTION_MOBILE)"/>
+	</data>
+
+	<!-- 套间 -->
+	<data name="suite" tableName="VW_SUITE" filter="SUITE_METADATA_ID=@suite_metadata_id AND LANG=@lang">
+		<field name="name" fieldType="physicalValue" fieldName="SUITE_NAME"/>
+	</data>
+
+	<!-- 套间产品 -->
+	<multidata name="suite_product" sqlResource="SELECT sku.IMAGE_SOURCE, sku.LIST_IMAGE_URL, sku.LIST_IMAGE_ID, sku.LIST_IMAGE_ID, sku.LIST_IMAGE_ALT, p.PRODUCT_NAME, c.COLLECTION_NAME, sku.SKU_CODE,d.CREATE_TIME
+						      FROM SUITE_PRODUCT d 
+							LEFT JOIN VW_SKU sku ON d.SKU_METADATA_ID = sku.SKU_METADATA_ID AND sku.LANG = @lang
+							LEFT JOIN VW_PRODUCT p ON sku.PRODUCT_METADATA_ID = p.PRODUCT_METADATA_ID AND p.LANG = @lang
+							LEFT JOIN VW_COLLECTION c ON p.COLLECTION_METADATA_ID = c.COLLECTION_METADATA_ID AND c.LANG = @lang
+						      WHERE d.SUITE_METADATA_ID = @suite_metadata_id
+							 ORDER BY p.SEQ_NO DESC" >
+		<field name="list_image_url" fieldType="physicalFileAsset" fileAssetSource="IMAGE_SOURCE" fileAssetExternal="LIST_IMAGE_URL" fileAssetInternal="LIST_IMAGE_ID"/>
+		<field name="product_name" fieldType="physicalValue" fieldName="PRODUCT_NAME"/>
+		<field name="sku_code" fieldType="physicalValue" fieldName="SKU_CODE"/>
+		<field name="image_alt" fieldType="physicalValue" fieldName="LIST_IMAGE_ALT"/>
+		<field name="target_url" fieldType="url" depentOn="SKU_METADATA_ID"  service="suiteUrlAnalysis" />
+	</multidata>
+
+	<!-- HotSpot -->
+	<data name="hot_spot"  contentType="CONTENT_FIELD_VALUES" sqlResource="SELECT
+	FIELD_VALUE,
+	FIELD_NAME,
+	cv.CONTENT_METADATA_ID
+FROM
+	CONTENT_FIELD_VALUES cv
+LEFT JOIN SUITE_HOT_SPOT hot ON cv.CONTENT_METADATA_ID = hot.HOT_SPOT_ID 
+ WHERE hot.SUITE_METADATA_ID=@suite_metadata_id" >
+ 		<field name="FIELD_NAME"  fieldType="physicalValue" fieldName="FIELD_NAME" />
+		<field name="FIELD_VALUE"  fieldType="physicalValue" fieldName="FIELD_VALUE" />
+		<field name="CONTENT_METADATA_ID"  fieldType="physicalValue" fieldName="CONTENT_METADATA_ID" />
+		
+		<map  name="CONTENT_FIELD_VALUES" >
+			<field name="seq_no"  fieldName="SeqNo"/>
+			<field name="content"  fieldName="Content"/>
+			<field name="title"  fieldName="Title"/>
+		</map>
+	</data>
+</page>

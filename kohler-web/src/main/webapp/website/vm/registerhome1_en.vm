@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Cache-Control" content="max-age=300"/>
+    <meta name='keywords' content=''/>
+    <meta name='description' content=''/>
+    <meta name="applicable-device" content="pc">
+    <link type="text/css" href="css/main.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="js/search.js" async=""></script>
+    <script type="text/javascript" src="js/resize.js"></script>
+    <script type="text/javascript" src="js/register.js"></script>
+    <script type="text/javascript" src="js/registeraonntation.js"></script>
+    <script type="text/javascript" src="js/chinaweb.js"></script>
+    <title>科勒中国 KOHLER</title>
+</head>
+<body>
+<div class="head_wrapper">
+    <div class="pub_header">
+        <div class="login_panel">
+            <ul>
+                <li class="language"><a href="javascript:;"><i></i><span>中文</span></a></li>
+                <li class="login"><a href="javascript:;"><i></i><span id="login_btn">Login/</span><span id="register_btn">Registration</span></a></li>
+                <li class="favorite"><a href="javascript:;"><i></i><span>My Favorite</span></a></li>
+                <li class="shop"><a href="javascript:;"><i></i><span>Find A Showroom</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pub_nav">
+        <div class="nav_panel">
+            <a href="index.html" class="logo"></a>
+            <ul class="menu">
+                <li><a href="bathroom.html"><h1>BATHROOM</h1></a></li>
+                <li><a href="kitchen.html"><h1>KITCHEN</h1></a></li>
+                <li><a href=""><h1>Home Ideas</h1></a></li>
+                <li><a href=""><h1>Professionals</h1></a></li>
+                <li><a href=""><h1>What's New</h1></a></li>
+            </ul>
+            <div class="search_panel"></div>
+        </div>
+    </div>
+
+    <div class="pub_search">
+        <div class="pub_searchpanel">
+            <div class="pub_searchbar">
+                <input type="text" placeholder="请输入关键字或产品代码" />
+                <div class="pub_searchicon"></div>
+            </div>
+            <div class="pub_searchhistory">
+                <ul>
+                    <li>艾贝</li>
+                    <li>艾葆绰</li>
+                    <li>艾黛儿</li>
+                    <li>艾斯格尔独立套间</li>
+                </ul>
+                <div class="pub_searchall">查看所有搜索结果</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content_wrapper">
+<div class="register_banner">
+    <img src="images/reg1.jpg" alt="">
+</div>
+<div class="register_title">
+    <p class="title">Thanks for your register</p>
+    <p class="info">Welcome to the official website of registered Kohler, browse pictures collection, <br />discover new trends, get product information you need</p>
+</div>
+<div class="regline700"></div>
+<form id="jzRegisterForm">
+<div class="register_panel clearfix">
+    <div class="register_left">
+        <p class="title type_title"><b>Account Type</b></p>
+        <p class="title2">Describe Yourself</p>
+        <a href="registerconsumer1.html" class="account_type middle1">Consumer</a>
+        <a href="registerhome1.html" class="account_type middle2 choose">Architect / Designer<br />for Home<div class="register_arrow"></div></a>
+        <a href="registerbusiness1.html" class="account_type middle2">Architect / Designer<br /> for Business</a>
+        <a href="registerdeveloper1.html" class="account_type middle1">Developer</a>
+        <a href="registermember1.html" class="account_type middle2 member">"Gracious Living"<br /> Club Member</a>
+    </div>
+    <div class="register_ver_line"></div>
+    <div class="register_right">
+        <p class="title mb18"><b>Please follow the prompts to fill in your personal information "<span class="mark"> * </span>" Required field</b></p>
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">Phone Number<span class="mark"> * </span></label>
+                <input type="text" name="accountName" id="accountName_jz" class="label_input_bar" placeholder="" />
+                <!-- <div class="btn_code">发送验证码</div> -->
+            </div>
+        </div>
+        <!-- <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">验证码<span class="mark"> * </span></label>
+                <input type="text" class="label_input_bar" placeholder="请输入手机中收到的验证码" />
+            </div>
+        </div> -->
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">Password<span class="mark"> * </span></label>
+                <input type="password" name="password" id="password_jz" class="label_input_bar" placeholder="" />
+            </div>
+        </div>
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <div class="regline345"></div>
+                <div class="label_txt2">Basic Personal Information</div>
+            </div>
+        </div>
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">Name</label>
+                <input type="text" name="realName" id="realName_jz" class="label_input_bar" placeholder="User Name" />
+            </div>
+        </div>
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">Email</label>
+                <input type="text" name="email" id="email_jz" class="label_input_bar" placeholder="Member@hotmail.com" />
+            </div>
+        </div>
+        <div class="register_content pt3 clearfix">
+            <div class="register_label">
+                <label class="label_txt">&nbsp;</label>
+                <div class="icon_select"></div>
+                <label class="select_txt">New Products</label>
+                <div class="icon_select"></div>
+                <label class="select_txt">Promotion</label>
+                <div class="icon_select"></div>
+                <label class="select_txt">Event Information</label>
+            </div>
+        </div>
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">Company Phone </label>
+                <input type="text" name="companyTelephone" class="label_input_bar" placeholder="" />
+            </div>
+        </div>
+        <div class="register_content clearfix z1">
+            <div class="register_label z2">
+                <label class="label_txt">Company Address</label>
+                <div class="search province">
+                    <p>Province</p>
+                    <ul class="select-panel clearfix">
+                        <li class="option" value=""><a href="javascript:;">Province1</a></li>
+                        <li class="option" value=""><a href="javascript:;">Province2</a></li>
+                        <li class="option" value=""><a href="javascript:;">Province3</a></li>
+                        <li class="option" value=""><a href="javascript:;">Province4</a></li>
+                        <li class="option" value=""><a href="javascript:;">Province5</a></li>
+                        <li class="option" value=""><a href="javascript:;">Province6</a></li>
+                        <li class="option" value=""><a href="javascript:;">Province7</a></li>
+                    </ul>
+                </div>
+                <div class="search city">
+                    <p>City</p>
+                    <ul class="select-panel clearfix">
+                        <li class="option" value=""><a href="javascript:;">City1</a></li>
+                        <li class="option" value=""><a href="javascript:;">City2</a></li>
+                        <li class="option" value=""><a href="javascript:;">City3</a></li>
+                        <li class="option" value=""><a href="javascript:;">City4</a></li>
+                        <li class="option" value=""><a href="javascript:;">City5</a></li>
+                        <li class="option" value=""><a href="javascript:;">City6</a></li>
+                        <li class="option" value=""><a href="javascript:;">City7</a></li>
+                    </ul>
+                </div>
+                <div class="search area">
+                    <p>District</p>
+                    <ul class="select-panel clearfix">
+                        <li class="option" value=""><a href="javascript:;">District1</a></li>
+                        <li class="option" value=""><a href="javascript:;">District2</a></li>
+                        <li class="option" value=""><a href="javascript:;">District3</a></li>
+                        <li class="option" value=""><a href="javascript:;">District4</a></li>
+                        <li class="option" value=""><a href="javascript:;">District5</a></li>
+                        <li class="option" value=""><a href="javascript:;">District6</a></li>
+                        <li class="option" value=""><a href="javascript:;">District7</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+        <div class="register_content clearfix">
+            <div class="register_label">
+                <label class="label_txt">&nbsp;</label>
+                <input type="text" class="label_input_bar" placeholder="Address" />
+            </div>
+        </div>
+        <div class="register_content mb0 clearfix mb0">
+            <div class="register_label">
+                <label class="label_txt">&nbsp;</label>
+                <div class="icon_select"></div>
+                <label class="select_txt">Privacy Policy （I agree to the service agreement of Kohler China）</label>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+<div style="height: 643px; display: none;border: 1px solid red;" class="popup_register_panel product_popup">
+    <div class="popup_register_panel success member_success">
+        <div class="pop_close"><img src="images/icon_close.png" alt=""></div>
+        <div class="register_login_panel">
+            <div class="register_title success_title">
+                <p class="title login_logo3">中国官网注册</p>
+            </div>
+        </div>
+        <div class="success700"></div>
+        <div class="success_content">
+            <p class="title"><b>注册已成功</b></p>
+            <p class="thanks"><b>感谢您关注科勒中国官网</b></p>
+            <p class="info">注册已成功，感谢您对科勒的关注。同时您已参与了线下抽奖活动，<br />如您获奖我们的工作人员会及时与您取得联系。</p>
+        </div>
+        <div class="success700 mb42"></div>
+        <div class="register_btn_panel mb40">
+            <div class="register_btn confirm_btn">确定</div>    
+        </div>
+    </div>
+</div>    
+
+<div class="regline700 mt30"></div>
+<div class="register_btn_panel">
+    <div class="register_btn register_yqjz" id="reg_btn">Register</div>    
+</div>
+<div class="pub_totop">
+    <div class="totop_btn"><img src="images/totop.png" alt=""></div>
+    <span>Back to top</span>
+</div>
+<div class="pub_footer">
+    <div class="subnav">
+        <div class="layout about">
+            <h4>About Kohler</h4>
+            <ul>
+                <li><a href="" rel="nofollow">About Us</a></li>
+                <li><a href="" rel="nofollow">Contact Us</a></li>
+                <li><a href="" rel="nofollow">Press Room</a></li>
+                <li><a href="" rel="nofollow">Customer Support</a></li>
+                <li><a href="" rel="nofollow">Career</a></li>
+            </ul>
+        </div>
+        <div class="layout">
+            <h4><br/></h4>
+            <ul>
+                <li><a href="" rel="nofollow">Sitemap</a></li>
+                <li><a href="" rel="nofollow">Kohler Worldwide</a></li>
+                <li><a href="" rel="nofollow">Legal Statement</a></li>
+                <li><a href="" rel="nofollow">Privacy</a></li>
+                <li><a href="" rel="nofollow">App Download</a></li>
+            </ul>
+        </div>
+        <div class="layout brand">
+            <h4>KOHLER Co.</h4>
+            <ul>
+                <li><a href="" rel="nofollow">Sterling</a></li>
+                <li><a href="" rel="nofollow">Kallista</a></li>
+                <li><a href="" rel="nofollow">Ann Sacks</a></li>
+                <li><a href="" rel="nofollow">Robern</a></li>
+            </ul>
+        </div>
+        <div class="layout media">
+            <h4>Social Media</h4>
+            <ul>
+                <li class="blog"><a href="" rel="nofollow"><i></i><span>Sina Weibo</span></a></li>
+                <li class="qqblog"><a href="" rel="nofollow"><i></i><span>Tencent Weibo</span></a></li>
+                <li class="douban"><a href="" rel="nofollow"><i></i><span>Douban</span></a></li>
+                <li class="renren"><a href="" rel="nofollow"><i></i><span>Renren</span></a></li>
+                <li class="qzone"><a href="" rel="nofollow"><i></i><span>QQ zone</span></a></li>
+                <li class="wechat"><a href="" rel="nofollow"><i></i><span>WeChat</span></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="pub_copyright">
+    <div class="copyright"><p>© Kohler Co. All Rights Reserved</p></div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.kohler</groupId>
+		<artifactId>kohler-enterprise</artifactId>
+		<version>0.0.1</version>
+	</parent>
+
+	<groupId>com.kohler</groupId>
+	<artifactId>kohler-framework</artifactId>
+	<name>kohler-framework</name>
+	<description>kohler-framework</description>
+	<packaging>jar</packaging>
+	<version>0.0.1</version>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>jsp-api</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.kohler</groupId>
+			<artifactId>kohler-persistent</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+		
+		<!-- 11/10 solr by zqq start -->
+		  <dependency>
+			    <groupId>org.apache.solr</groupId>
+			    <artifactId>solr-core</artifactId>
+			    <version>4.8.1</version>
+			</dependency>
+		<dependency>
+                <groupId>org.apache.solr</groupId>
+                <artifactId>solr-solrj</artifactId>
+                <version>4.8.1</version>
+            </dependency>
+		<!-- 11/10 solr by zqq end -->
+	</dependencies>
+</project>

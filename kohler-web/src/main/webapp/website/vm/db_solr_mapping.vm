@@ -1,0 +1,10 @@
+var dbSolrMappingData = new Array();
+#if(${data.solr_map})
+#foreach($record in ${data.solr_map})
+	dbSolrMappingData['${record.dbFieldName}'] = '${record.solrFieldName}';
+#end
+#end
+function dbToSolr(dbFieldName){
+	console.log(dbFieldName+"=>"+dbSolrMappingData[dbFieldName]);
+	return dbSolrMappingData[dbFieldName];
+}

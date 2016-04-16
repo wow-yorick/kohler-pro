@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>用户首页</title>
+</head>
+<body>
+	<div>
+		<div align="center">$!template.name</div>
+		<div>
+			#foreach($filed in $template.fileds)
+			<div>
+				#if ($filed.type == 'select')
+				    <select name="$!filed.name">
+						#foreach($value in $filed.values)
+							<option value="$!value">$!value</option>
+						#end
+					</select>
+				#elseif ($filed.type == 'checkbox')
+					#foreach($value in $filed.values)
+						<input type="$!filed.type" name="$!filed.name" value="$!value"/>$!value
+					#end
+				#elseif ($filed.type == 'radio')
+					#foreach($value in $filed.values)
+						<input type="$!filed.type" name="$!filed.name" value="$!value"/>$!value
+					#end
+				#else
+				    <input type="$!filed.type" name="$!filed.name"/>
+				#end 
+				</div><br>
+			#end
+		</div>
+	</div>
+</body>
+</html>

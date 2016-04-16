@@ -1,0 +1,608 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name='keywords' content='$!{data.seo.get(0).seo_keywords}&nbsp;'/>
+    <meta name='description' content='$!{data.seo.get(0).seo_description}&nbsp;'/>
+		<link type="text/css" href="${data.base_url}css/main_en.css" rel="stylesheet"/>
+		<link type="text/css" href="${data.base_url}css/video-js.css" rel="stylesheet"/>
+    <script type="text/javascript" src="${data.base_url}js/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/chinaweb.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/resource.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/sly.min.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/jquery.slides.min.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/slides.js"></script>
+    <script type="text/javascript" src="http://s7d4.scene7.com/s7viewers/html5/js/FlyoutViewer.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/scene72.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/product.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/search.js" async></script>
+    <script type="text/javascript" src="${data.base_url}js/resize.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/details.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/zoom.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/global.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/video.js"></script>
+    <script type="text/javascript" src="${data.base_url}js/favorite.js"></script>
+    <link type="text/css" href="${data.base_url}css/product.css" rel="stylesheet"/>
+    
+    <script type="text/javascript" src="${data.base_url}js/pdpcompare.js"></script>
+    #if($data.product.size() >= 1)
+    	<script type="text/javascript" src="${data.base_url}js/data${data.product.get(0).product_code}.js"></script>
+    #end 
+    <title>$!{data.seo.get(0).seo_title}&nbsp;</title>
+<script>
+$(document).ready(function() {
+	#if($data.common_attr.size() >= 1)
+        #foreach($parm in ${data.common_attr})
+            	#if($parm.category_com_attr_name != "TMALL链接")
+        			 			$("#product_car_btn").hide();
+        			#end	
+        #end
+   #end
+	productsol("pro_slides");
+	productsol("pro_slides1");
+	if($("#product_template_list_1").children().length < 1){
+		$("#product_template_title_1").hide();
+	}
+	if($("#product_template_list_2").children().length < 1){
+		$("#product_template_title_2").hide();
+	}
+if(jsonsku){
+		var json=eval('('+jsonsku+')');
+		$(json.sku).each(function(){
+		    var real_attr = this.real_attr.replace(/&/g,'"');
+		    this.real_attr = eval('('+real_attr+')');
+		});
+		for(var i =0;i<json.sku_attributes.length;i++)
+    {
+		//有几个属性则追加几个ul
+		$(".proattr").append("<p><b>"+json.sku_attributes[i].attrname+"：</b><span></span></p><ul class='product_param_warp clearfix' attrname='"+json.sku_attributes[i].attrname+"'></ul>");
+		//循环属性的下属个数，追加li，并且赋值
+		for(var z=0;z<json.sku_attributes[i].sku_attributes_values.length;z++) {
+            //如果attr_image_url为空则显示文本
+            if (json.sku_attributes[i].sku_attributes_values[z].attr_image_url == "") {
+                var oli = document.createElement('li');
+                $(".proattr ul").eq(i).append(oli);
+                oli.realAttr = {
+                    'attrName': json.sku_attributes[i].attrname,
+                    'attrValue': json.sku_attributes[i].sku_attributes_values[z].attr_value,
+                    'attrId': json.sku_attributes[i].sku_id,
+                    'attrThisId':json.sku_attributes[i].sku_attributes_values[z].category_sku_attr_values_metadata_id
+                }
+                $(oli).append(json.sku_attributes[i].sku_attributes_values[z].attr_value);
+                // oli.realAttr
+                //	.append("<li realAttr=sku_attr_id!@"+json.sku_attributes[i].sku_attr_id+":"+json.sku_attributes[i].sku_attributes_values[z].attr_value+">"+json.sku_attributes[i].sku_attributes_values[z].attr_value+"</li>")
+            } else {
+                //如果attr_image_url不为空则显示小图标，并且修改类名
+                $(".proattr ul").eq(i).removeClass("product_param_warp").addClass("product_color_warp");
+                var oli = document.createElement('li');
+                oli.realAttr = {
+                    'attrName': json.sku_attributes[i].attrname,
+                    'attrValue': json.sku_attributes[i].sku_attributes_values[z].attr_value,
+                    'attrId': json.sku_attributes[i].sku_id,
+                    'attrThisId':json.sku_attributes[i].sku_attributes_values[z].category_sku_attr_values_metadata_id
+                };
+                $(".proattr ul").eq(i).append(oli);
+                $(oli).append('<img src='+json.sku_attributes[i].sku_attributes_values[z].attr_image_url+'/>');
+
+            }
+        }
+    }
+    var checkData = function(i,data)
+    {
+        var uls = $('.proattr ul');
+        var realArr = [];
+        var sku = json.sku;
+        var skuArr = [];
+        var index = -1;
+        var indata = false;
+        $(sku).each(function(){
+            $(this.real_attr).each(function(){
+                if(this.sku_attr_name == data.attrName)
+                {
+                    indata = true;
+                }
+            });
+        });
+        if(indata == false)
+        {
+            return  -1;
+        }
+        realArr.push(data);
+        uls.each(function(z){
+            if(z != i)
+            {
+                var lis = $(this).find('li');
+                lis.each(function(){
+                    if($(this).hasClass('selected'))
+                    {
+                        realArr.push(this.realAttr);
+                    }
+                });
+            }
+        });
+        $(sku).each(function(d){
+            var real_attr = this.real_attr;
+            var confirm = true;
+            $(realArr).each(function(){
+
+                var attrName = this.attrName;
+                var attrValue = this.attrValue;
+                $(real_attr).each(function(){
+                  //  console.log(this);
+                  //  console.log(this.sku_attr_name+'=='+attrName+'&&'+this.sku_attr_value_name+'=='+attrValue);
+                    if(this.sku_attr_name == attrName)
+                    {
+                        if(this.sku_attr_value_name != attrValue)
+                        {
+                            confirm = false
+                        }
+                    }
+                });
+
+            });
+            if(confirm == true )
+            {
+                index = d;
+            }
+        });
+        return index;
+    };
+    var eventBind = function()
+    {
+        var uls = $('.proattr ul');
+
+        uls.each(function(i){
+            var lis = $(this).find('li');
+            lis.click(function(){
+
+                var thisid = checkData(i,this.realAttr);
+                if( thisid>= 0)
+                {
+                    $(this).addClass('selected').siblings().removeClass('selected');
+                    ddd(json,json.sku[thisid]);
+                }
+
+		//mark heat
+		productHeatRecords();
+
+            });
+        });
+    };
+    eventBind();
+	//设置默认产品
+	for(var i=0;i<json.sku.length;i++){
+        //默认高亮的小图标
+		if(json.sku[i].is_default == true){
+			ddd(json,json.sku[i]);
+		}
+		//点击属性时，获取属性值，对比组合是否存在
+
+	};
+    // pdp缩略图
+    $('.img-thumbnail-list').hover(function() {
+        $(this).addClass('show');
+        $('#slides').show();
+    })
+    $('.img-thumbnail-list').mouseleave(function() {
+        $(this).removeClass('show');
+        $('#slides').hide();
+    })
+		 var scrollUlLeft = 0,    //.scroll_ul 初使化时的 left 值为 0
+          prevAllow = true,    //为了防止连续点击上一页按钮
+          nextAllow = true,    //为了防止连续点击下一页按钮
+		  scrollUlWidth = $('#pdplist ul li').outerWidth(true);   //单个 li 的宽度
+	 //点击上一页	
+	$("#slides .previous").click(function(){
+		if (prevAllow) {
+			prevAllow = false;
+			scrollUlLeft = scrollUlLeft - scrollUlWidth;
+			$('#pdplist ul').css('left', scrollUlLeft);
+			//复制最后一个 li 并插入到 ul 的最前面
+            $('#pdplist ul li:last').clone(true).prependTo('#pdplist ul');
+			//删除最后一个 li
+            $('#pdplist ul li:last').remove();
+			$('#pdplist ul').animate({
+                left : scrollUlLeft + scrollUlWidth
+            }, 300, function() {
+                scrollUlLeft = parseInt($('#pdplist ul').css('left'), 10);
+                prevAllow = true;
+            })
+			}
+		});
+		
+	//点击下一页	
+	$("#slides .next").click(function(){	
+		if (nextAllow) {
+			nextAllow = false;
+			$('#pdplist ul').animate({
+                left : scrollUlLeft - scrollUlWidth
+            }, 300, function() {
+                scrollUlLeft = parseInt($('#pdplist ul').css('left'), 10);
+                scrollUlLeft = scrollUlLeft + scrollUlWidth;
+                $('#pdplist ul').css('left', scrollUlLeft);
+                //复制第一个 li 并插入到 ul 的最后面
+                $('#pdplist ul li:first').clone(true).appendTo('#pdplist ul');
+                //删除第一个 li
+                $('#pdplist ul li:first').remove();
+                nextAllow = true;
+            });
+		}
+	});
+}
+});
+
+</script>
+</head>
+<body>
+<div class="head_wrapper">
+    #parse("header_pc_en.vm")
+    <div class="pub_submenu pdp_menu clearfix">
+        <div class="submenu_panel bread">
+            <div class="bread_panel clearfix">
+              #if(${data.breadcrumb_name})
+								#foreach($parm in ${data.breadcrumb_name})
+									#if($velocityCount > 1)
+											#if($parm.name)
+								  			<div class="bread_link" ><img src="${data.base_url}images/arrow2.png" alt=""></div>
+								  		#end
+									#end
+									#if($parm.name)
+										<a class="bread_link" style="text-decoration:none;" href="${parm.url}">${parm.name}</a>
+									#end
+						    #end
+						   #end
+            </div>
+        </div>
+    </div>
+    <div class="pub_search">
+        <div class="pub_searchpanel">
+            <div class="pub_searchbar">
+                <input type="text" placeholder="please input keyword" />
+                <div class="pub_searchicon"></div>
+            </div>
+            <div class="pub_searchhistory">
+                <ul>
+                    <li>keyword1</li>
+                    <li>keyword2</li>
+                    <li>keyword3</li>
+                    <li>keyword4</li>
+                </ul>
+                <div class="pub_searchall">show all search results</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content_wrapper pdp">
+    <div class="product_warp clearfix">
+        <div class="product_pic">
+            <div class="product_main_pic">
+            <div class="imgbox">
+  				<div class="probox"><img src="${data.base_url}images/arts_06.jpg"><div class="hoverbox"></div></div>
+  				<div class="showbox"><img src="${data.base_url}images/arts_06.jpg"></div>
+			</div>
+            <div class="img-thumbnail-list clearfix">
+                <div class="slides-bar" id="slides" style="display:none">
+                <div href="#" class="previous"></div>
+                <div id="pdplist">
+                    <ul class="clearfix">
+                    </ul>
+                </div>    
+                    <div href="#" class="next"></div>
+                </div>
+            </div>
+        </div>
+        <div class="product_title">
+        		<h2>${data.product.get(0).product_name}</h2>
+        </div>
+        <div class="line560"></div>
+        <ul class="product_intro">
+            ${data.feature.get(0).value}
+        </ul>
+        #if($data.common_attr.size() >= 1)
+        <h3>Product Specifications</h3>
+        <div class="line560"></div>
+        <ul class="product_property">
+            #foreach($parm in ${data.common_attr})
+            		#if($parm.category_com_attr_name != "TMALL链接")
+        			 			<li><b>${parm.category_com_attr_name}: </b>${parm.value}</li>
+        				#end
+        		#end
+        </ul>
+        #end
+        <h4 class="product_parts_title">Accessories</h4>
+        <div class="line560"></div>
+        <div class="product_parts_panel">
+            <div class="product_parts_bar">
+                <p class="first_title">Including accessories：</p>
+                <ul></ul>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <h3>Awards</h3>
+        <div class="line560"></div>
+        <ul class="product_brand_logo clearfix">
+            <li><img src="${data.base_url}images/brand_logo1.jpg"/></li>
+            <li><img src="${data.base_url}images/brand_logo2.jpg"/></li>
+            <li><img src="${data.base_url}images/brand_logo3.jpg"/></li>
+        </ul>
+        <div class="clearfix"></div>
+        #if($data.product_pdf.size() >= 1)
+	        <div class="product_widget_data">Parts and Materia</div>
+	        <div class="product_data_text">Technical Information Downloads</div>
+	        <div class="line560"></div>
+	        <ul class="product_tech_data">
+	            #foreach($parm in ${data.product_pdf})
+	        				<li><a href="${parm.pdf_url}"  target="_blank" >${parm.pdf_name}</a></li>
+	        		#end
+	        </ul>
+        #end
+        <div class="product_data_text service">Customer Support</div>
+        <div class="line560"></div>
+        <div class="product_support_text">Please contact us if you have any questions about the product, we will assist you immediately.</div>
+        <ul class="product_contact">
+            <li><b>Contact Us：</b></li>
+            <li><b>400-800-4537</b></li>
+            <li class="product_contact_last">8:00 am - 5:00 pm, Monday - Friday</li>
+        </ul>
+        <div class="product_email_me"><p>Email Us</p></div>
+        <ul class="product_email_tips">
+            <li><span>Care and Cleaning Tips</span></li>
+            <li><span>Warranty</span></li>
+        </ul>
+    </div>
+    <div class="product_rightcontent">
+        <div class="product_feature">
+            <h1><!--${data.product.get(0).product_name}<br />--><span></span></h1> 
+						<div class="proattr"></div>
+            <ul class="product_car_btn clearfix" id="product_car_btn">
+                <li class="product_btn_car"><i class="icon_car"></i><span class="txt_car">SHOP ONLINE</span></li>
+            </ul>
+            <ul class="product_bottom_btn clearfix">
+                <li class="product_btn compare">COMPARE<input type="hidden" id="pdpSkuMetadataId" value="10102003"></li>
+                <li class="product_btn">FAVORITE</li>
+                <li class="product_btn2"></li>
+                <input type="hidden" id="imgUrlForPdp" value="${data.base_url}">
+                <input type="hidden" id="thisPageLang" value="2">
+            </ul>
+				</div>
+				#if($data.product_video.size() >= 1)
+        <div class="product_video">Video</div>
+        	#foreach($param in ${data.product_video})
+	        	<div class="product_video_content">
+	        		<!--<div class="icon_play"><img src="${data.base_url}images/icon_play.png" alt=""></div> -->
+	            <div  id='d$velocityCount' aa="${param.video_url}">
+	            		 <script type='text/javascript'>
+								        $(function(){
+								           // 视频播放器代码
+								            var myVideo = new MYPUMA.PumaVideo('${data.base_url}js/video-js.swf');
+								            myVideo.create('d$velocityCount',{'width':318,'height':160,'autoplay':false,'loop':false,'poster':'${data.base_url}images/bathroom_item1.jpg','flv':'${param.video_url}'});
+								        });
+	        				</script>	
+	            </div>
+	            <p>Video Introduction<p>
+	          </div>
+        #end
+      #end
+      <div class="clearfix"></div>
+#if($data.product_cads.size() >= 1)
+        <div class="product_template">Templates and Symbol Downloads</div>
+        <div class="line320"></div>
+        <div class="product_template_title">2D CAD File：</div>
+       			<ul class="product_template_list">
+			        	 #foreach($parm in $data.product_cads)
+        						#if($parm.cad_type_id == 10050001)
+					            <li class="product_template_list1">Plan</li>
+					            <li class="product_template_list2">$parm.cad_name
+					            		<span>
+					            			$parm.suffix &nbsp;
+					            			#if($parm.suffix)
+							            			#foreach($parm1 in $data.product_cads)
+							            					#if(($parm1.cad_type_id == 10050001 && $parm.cad_name == $parm1.cad_name) && $parm.suffix != $parm1.suffix)
+							            								|&nbsp;&nbsp; $parm1.suffix
+							            					#end
+							            			 #end
+						            		 #end
+					            		</span>
+					            </li>
+			             		#end
+			             #end
+			        </ul>
+		       
+		        	<ul class="product_template_list">
+		        		 #foreach($parm in $data.product_cads)
+        						#if($parm.cad_type_id == 10050002)
+					            <li class="product_template_list1">Font</li>
+		            			<li class="product_template_list2">$parm.cad_name
+			            			<span>
+			            				$parm.suffix &nbsp;
+					            			#if($parm.suffix)
+							            			#foreach($parm1 in $data.product_cads)
+							            					#if($parm1.cad_type_id == 10050002 && $parm.cad_name == $parm1.cad_name && $parm.suffix != $parm1.suffix)
+							            								|&nbsp;&nbsp; $parm1.suffix
+							            						#end
+							            			 #end
+						            		 #end
+			            			</span>
+		            			</li>
+			             #end
+			           #end
+		         </ul>
+        
+        <div class="product_template_title" id="product_template_title_1">3D CAD File：</div>
+	        <ul class="product_template_list" id="product_template_list_1">
+	        		#foreach($parm in $data.product_cads)
+        						#if($parm.cad_type_id == 10050003)
+	            				<li class="product_template_list2">$parm.cad_name
+	            				<span>
+			            				$parm.suffix &nbsp;
+					            			#if($parm.suffix)
+							            			#foreach($parm1 in $data.product_cads)
+							            					#if($parm1.cad_type_id == 10050003 && $parm.cad_name == $parm1.cad_name && $parm.suffix != $parm1.suffix)
+							            								|&nbsp;&nbsp; $parm1.suffix
+							            						#end
+							            				#end
+						            		 #end
+			            			</span>
+	            				</li>
+	             			#end
+			        #end
+	        </ul>
+	        <div class="product_template_title" id="product_template_title_2">Cutout Templates：</div>
+	        <ul class="product_template_list" id="product_template_list_2">
+	        	#foreach($parm in $data.product_cads)
+        			#if($parm.cad_type_id == 10050004)
+	            	<li class="product_template_list2">$parm.cad_name
+	            	<span>
+			            				$parm.suffix &nbsp;
+					            			#if($parm.suffix)
+							            			#foreach($parm1 in $data.product_cads)
+							            					#if($parm1.cad_type_id == 10050004 && $parm.cad_name == $parm1.cad_name && $parm.suffix != $parm1.suffix)
+							            								|&nbsp;&nbsp; $parm1.suffix
+							            					#end
+							            			#end
+						            		 #end
+			            			</span>
+	            	</li>
+	            #end
+			      #end
+	        </ul>
+	    #end
+    		</div>
+    	
+    <div class="clearfix"></div>
+</div>
+
+<div class="product_warp">
+			#if($data.pair_well_with.size() >= 1)
+		  <div class="product_title_fx">Recommended Products</div>
+	    <div class="product_associated clearfix">
+	    		<div class="slides-bar" id="pro_slides">
+	        <ul class="clearfix">
+	        		#foreach($parm in ${data.pair_well_with})
+										<li>
+	            					<a href="${parm.product_url}">
+					                <div class="item_img"><img
+					                        src="${parm.list_image_url_real}" alt="${$parm.list_image_alt}">
+					                </div>
+					                <span>
+					                    <h3>${parm.collection_name}</h3>
+					                    <p>${parm.product_name}</p>
+					                    <p class="type">${parm.sku_code}</p>
+					                </span>
+	            					</a>
+	        					</li>
+								#end
+					</ul>
+	        <div href="#" class="slidesjs_previous"></div>
+	        <div href="#" class="slidesjs_next"></div>
+	        </div>
+	       
+</div>
+ #end
+#if($data.same_collection.size() >= 1)
+	    <div class="product_title_fx product_mgnbottom">COLLECTIONS</div>
+	    <div class="index_series">
+	    		<div class="series_panel">
+	    						#foreach($parm in ${data.same_collection})	
+	    								#if($velocityCount == 1)
+	    										<div class="series_panel_img actived"><a href="${parm.product_url}"><img src="${parm.detail_image_url_real}" alt="${parm.detail_image_alt}"></a></div>
+	    								#else
+	    										<div class="series_panel_img"><a href="${parm.product_url}"><img src="${parm.detail_image_url_real}" alt="${parm.detail_image_alt}"></a></div>
+	    								#end
+	    						#end
+	    						#foreach($parm in ${data.same_collection})
+	    								#if($velocityCount == 1)
+	    										<div class="series_info showtext"><h4>${parm.product_name}</h4><p>${parm.collection_name}</p> </div>
+	    								#else
+	    										<div class="series_info"><h4>${parm.product_name}</h4><p>${parm.collection_name}</p> </div>
+	    								#end
+	    						#end
+	    			</div>
+        <div id="series_scroll" class="series_scroll">
+            <ul id="scroll_panel" class="scroll_panel clearfix">
+            		 #foreach($parm in ${data.same_collection})
+            					#if($velocityCount == 1)	
+    										<li><span class="selected"></span><img src="${parm.list_image_url_real}" alt=""/></li>
+    									#elseif($velocityCount == $data.same_collection.size()) 
+    										<li class="last"><span></span><img src="${parm.list_image_url_real}" alt=""></li>
+    									#else
+    										<li><span></span><img src="${parm.list_image_url_real}" alt=""/></li>
+    									#end
+    							#end
+            </ul>
+        </div>
+       <div class="scroll">
+            <div id="scrollbar" class="scrollbar">
+                <div class="handle"></div>
+            </div>
+        </div>
+    </div>
+  #end  
+</div>
+#if($data.story.size() >= 1)	
+<div style="margin-top:15px;" class="product_recommend_warp">
+		 ${data.story.get(0).value}
+</div>
+#end
+#if($data.recommended.size() >= 1)
+<div class="product_warp">
+	<div class="product_title_fx">SIMILAR PRODUCTS</div>
+    <div class="product_associated clearfix boxmgn">
+        <div class="slides-bar" id="pro_slides1">
+        <ul class="clearfix">
+	        		#foreach($parm in ${data.recommended})
+	        							<li>
+	            							<a href="${parm.product_url}">
+								                <div class="item_img"><img
+								                        src="${parm.list_image_url_real}" alt="${parm.list_image_alt}">
+								                </div>
+								                <span>
+								                    <h3>${parm.product_name}</h3>
+								                    <p>${parm.collection_name}</p>
+								                    <p class="type">${parm.sku_code}</p>
+								                </span>
+	           							  </a>
+	        						  </li>
+	        				#end
+	        		
+				</ul>
+        <div href="#" class="slidesjs_previous"></div>
+        <div href="#" class="slidesjs_next"></div>
+        </div>
+    </div>
+</div>
+#end
+<div class="pub_totop">
+    <div class="totop_btn"><img src="${data.base_url}images/totop.png" alt=""></div>
+    <span>Back to top</span>
+</div>
+<div class="compare_panel_small">
+    <div class="compare_bar_small">
+        <a class="compare_btn_show" href="javascript:;">Compare</a><a class="compare_btn_hide" href="javascript:;">Cancel</a>
+    </div>
+</div>
+<div class="compare_panel_large">
+    <div class="compare_bar_large">
+        <div class="compare_bar_title">
+            <p class="p_title">COMPARE PRODUCTS</p>
+            <a href="javascript:;" class="compare_btn">Compare</a>
+            <a href="javascript:;" class="compare_empty">Clear</a>
+            <p class="p_hide">Hidden</p>
+        </div>
+        <div class="compare_bar_list">
+            <div class="compare_list add">
+                <div class="compare_img add">
+                    <img src="images/compare_add.jpg" alt="">
+                </div>
+                <div class="compare_txt">
+                    <p class="txt">Add product</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+#parse("footer_pc_en.vm")
+
+</body>
+</html>

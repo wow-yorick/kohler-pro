@@ -1,0 +1,24 @@
+ <div class="pub_header">
+        <div class="login_panel">
+            <ul>
+                <li class="language"><a href=""><i></i><span>English</span></a></li>
+                <li class="login"><a href=""><i></i><span>登录/注册</span></a></li>
+                <li class="favorite"><a href=""><i></i><span>我的收藏</span></a></li>
+                <li class="shop"><a href="address.html"><i></i><span>查找店铺</span></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="pub_nav">
+        <div class="nav_panel">
+            <a href="index.html" class="logo"></a>
+            <ul class="menu">
+                <li><a href="bathroom.html"><h1>卫浴产品</h1></a></li>
+                <li class="hovered"><a href="kitchen.html"><h1>厨房产品</h1></a></li>
+                <li><a href=""><h1>家居畅想</h1></a></li>
+                <li><a href=""><h1>设计师之家</h1></a></li>
+                <li><a href=""><h1>最新资讯</h1></a></li>
+            </ul>
+            <div class="search_panel"></div>
+        </div>
+    </div>
+   

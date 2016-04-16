@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="productData" param="@product_id,@template_type,@lang">
+
+<multidata name="product" tableName="VW_PRODUCT" keyName="PRODUCT_METADATA_ID" filter="LANG=@lang">
+		<field name="product_name" fieldType="physicalValue" fieldName="PRODUCT_NAME"/>
+		<field name="feature" fieldType="commonAttrValue" keyName="feature"/>
+		<field name="collection" fieldType="physicalLink" fieldName="COLLECTION_METADATA_ID" linkTable="COLLECTION" linkFieldName="COLLECTION_METADATA_ID" linkDisplayName="COLLECTION_NAME"/>
+		<multidata name="sku" tableName="VW_SKU" keyName="SKU_METADATA_ID"  filter="PRODUCT_METADATA_ID=@@PRODUCT_METADATA_ID AND LANG=@lang">
+			<field name="sku_code" fieldType="physicalValue" fieldName="SKU_CODE"/>
+			<field name="sku_price" fieldType="physicalValue" fieldName="SKU_PRICE" />
+			<field name="is_default" fieldType="physicalValue" fieldName="IS_DEFAULT" />
+			<field name="image_source" fieldType="physicalValue" fieldName="IMAGE_SOURCE"/>
+			<field name="detail_image1_url" fieldType="physicalValue" fieldName="DETAIL_IMAGE1_URL" />
+			<field name="detail_image1_id" fieldType="physicalValue" fieldName="DETAIL_IMAGE1_ID" />
+			<field name="detail_image1_alt" fieldType="physicalValue" fieldName="DETAIL_IMAGE1_ALT" />
+		</multidata>
+		
+		<multidata name="sku_attributes" keyName="CATEGORY_SKU_ATTR_METADATA_ID" tableName="VW_CATEGORY_SKU_ATTR"  filter="CATEGORY_METADATA_ID=(SELECT CATEGORY_METADATA_ID FROM VW_PRODUCT WHERE PRODUCT_METADATA_ID=@product_id) AND lang=@lang" >
+			<field name="attrname" fieldType="physicalValue" fieldName="CATEGORY_SKU_NAME"/>
+			<multidata name="sku_attributes_values" sqlResource="
+			SELECT d.ATTR_VALUE, F.PHYSICAL_FILENAME
+			FROM VW_CATEGORY_SKU_ATTR_VALUES d 
+			 LEFT JOIN FILE_ASSET AS F ON d.IMAGE_ID = F.FILE_ASSET_ID
+			WHERE d.CATEGORY_SKU_ATTR_METADATA_ID = @@CATEGORY_SKU_ATTR_METADATA_ID" >
+				<field name="attr_value" fieldType="physicalValue" fieldName="ATTR_VALUE"/>
+				<field name="attr_image_url" fieldType="physicalValue" fieldName="PHYSICAL_FILENAME"/>
+			</multidata>
+		</multidata>
+		
+	</multidata>
+	<funcdata name="breadcrumb_name" from="getBreadcrumb" />
+</page>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Cache-Control" content="max-age=300"/>
+    <meta name='keywords' content='$!{data.seo.get(0).seo_keywords}&nbsp;'/>
+    <meta name='description' content='$!{data.seo.get(0).seo_description}&nbsp;'/>
+    <meta name="applicable-device" content="pc">
+  #parse("suite_style.vm")
+
+    <title>$!{data.seo.get(0).seo_title}&nbsp;</title>
+</head>
+<body>
+
+<div class="head_wrapper">
+  #parse("new_bath_header_pc_cn.vm")
+    <div class="pub_subnav">
+        <div class="pub_subnav_warp">
+			#if(${data.suites})
+			<ul class="clearfix">
+				#foreach($suites in ${data.suites})
+                <li index="collection_list$velocityCount">${suites.name}</li>
+				#end
+            </ul>
+			#end
+         
+            <div class="clearfix"></div>
+        </div>
+<!--         <div class="pub_subnav_arrow">
+            <div class="arrow_bottom"></div>
+        </div> -->
+    </div>
+    <div class="pub_subnav_arrow">
+        <div class="arrow_bottom"></div>
+    </div>
+    <div class="pub_search">
+        <div class="pub_searchpanel">
+            <div class="pub_searchbar">
+                <input type="text" placeholder="请输入关键字或产品代码" />
+                <div class="pub_searchicon"></div>
+            </div>
+            <div class="pub_searchhistory">
+                <ul>
+                    <li>艾贝</li>
+                    <li>艾葆绰</li>
+                    <li>艾黛儿</li>
+                    <li>艾斯格尔独立套间</li>
+                </ul>
+                <div class="pub_searchall">查看所有搜索结果</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content_wrapper">
+
+#if(${data.suites})
+#foreach($suites in ${data.suites})
+	$!{suites.list_content}&nbsp;
+
+#end
+#end
+
+
+
+
+
+
+
+<div class="pub_totop">
+    <div class="totop_btn"><img src="${data.base_url}images/totop.png" alt=""></div>
+    <span>返回顶部</span>
+</div>
+#parse("footer_pc_cn.vm")
+</body>
+</html>

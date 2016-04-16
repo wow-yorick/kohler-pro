@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="newArrivalData" param="@new_product_id,@template_type,@lang">
+	<!-- 面包屑 -->
+	<funcdata name="breadcrumb_name" from="getBreadcrumb" />
+
+	<!-- seo信息 -->
+	<data name="seo" tableName="VW_NEW_ARRIVAL" filter="NEW_ARRIVAL_METADATA_ID=@new_product_id AND LANG=@lang">
+		<field name="seo_title" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_TITLE_PC, SEO_TITLE_MOBILE)"/>
+		<field name="seo_keywords" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_KEYWORDS_PC, SEO_KEYWORDS_MOBILE)"/>
+		<field name="seo_description" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_DESCRIPTION_PC, SEO_DESCRIPTION_MOBILE)"/>
+	</data>
+
+	<!-- 新品 -->
+	<data name="new_product" tableName="VW_NEW_ARRIVAL" filter="NEW_ARRIVAL_METADATA_ID=@new_product_id AND LANG=@lang">
+		<field name="name" fieldType="physicalValue" fieldName="NEW_ARRIVAL_NAME"/>
+	</data>
+
+	<!-- 新品hero_area -->
+	<multidata name="hero_areas" contentType="CONTENT_FIELD_VALUES" sqlResource="SELECT
+	FIELD_VALUE,
+	FIELD_NAME,
+	cv.CONTENT_METADATA_ID
+FROM
+	CONTENT_FIELD_VALUES cv
+LEFT JOIN NEW_ARRIVAL_HERO_AREA area ON cv.CONTENT_METADATA_ID = area.HERO_AREA_METADATA_ID
+WHERE
+	area.IS_ENABLE = 1
+AND cv.IS_ENABLE = 1
+AND cv.LANG =@lang
+AND area.NEW_ARRIVAL_METADATA_ID =@new_product_id
+ORDER BY
+	area.SEQ_NO,
+	area.HERO_AREA_METADATA_ID">
+		 <field name="FIELD_NAME"  fieldType="physicalValue" fieldName="FIELD_NAME" />
+		 <field name="FIELD_VALUE"  fieldType="physicalValue" fieldName="FIELD_VALUE" />
+		 <field name="CONTENT_METADATA_ID"  fieldType="physicalValue" fieldName="CONTENT_METADATA_ID" />
+		 <map name="CONTENT_FIELD_VALUES">
+			<field name="seq_no"  fieldName="SeqNo"/>
+			<field name="title"  fieldName="Title"/>
+			<field name="image_url"  fieldName="Image Id"/>
+			<field name="image_alt"  fieldName="Image Alt"/>
+			<field name="image_overlay_text"  fieldName="Image Overlay Text"/>
+			<field name="target_url"  fieldName="Target URL"/>
+			<field name="operation"  fieldName="Operation"/>
+		</map>
+	</multidata>
+
+	<!-- 新品BannerUnit -->
+	<multidata name="banner_units" contentType="CONTENT_FIELD_VALUES" sqlResource="SELECT
+	FIELD_VALUE,
+	FIELD_NAME,
+	cv.CONTENT_METADATA_ID
+FROM
+	CONTENT_FIELD_VALUES cv
+LEFT JOIN NEW_ARRIVAL_BANNER_UNIT unit ON cv.CONTENT_METADATA_ID = unit.BANNER_UNIT_METADATA_ID
+WHERE
+	unit.IS_ENABLE = 1
+AND cv.IS_ENABLE = 1
+AND cv.LANG = @lang
+AND unit.NEW_ARRIVAL_METADATA_ID =@new_product_id
+ORDER BY
+	unit.SEQ_NO,
+	unit.BANNER_UNIT_METADATA_ID">
+		<field name="FIELD_NAME"  fieldType="physicalValue" fieldName="FIELD_NAME" />
+		<field name="FIELD_VALUE"  fieldType="physicalValue" fieldName="FIELD_VALUE" />
+		<field name="CONTENT_METADATA_ID"  fieldType="physicalValue" fieldName="CONTENT_METADATA_ID" />
+		<map name="CONTENT_FIELD_VALUES">
+			<field name="seq_no"  fieldName="SeqNo"/>
+			<field name="description"  fieldName="Description"/>
+			<field name="operation"  fieldName="Operation"/>
+			<field name="file_id"  fieldName="File Id"/>
+			<field name="type"  fieldName="Type"/>
+			<field name="target_url"  fieldName="Target URL"/>
+			<field name="image_overlay_text"  fieldName="Image Overlay Text"/>
+			<field name="image_alt"  fieldName="Image Alt"/>
+			<field name="title"  fieldName="Title"/>
+		</map>
+	</multidata>
+</page>

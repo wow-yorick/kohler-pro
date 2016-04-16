@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib>
+	<tlib-version>1.0</tlib-version>
+	<jsp-version>1.2</jsp-version>
+
+	<tag>
+		<name>page-edit</name>
+		<tag-class>com.kohler.tag.SectionPageTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>datatypeId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>pageId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>datatype-search</name>
+		<tag-class>com.kohler.tag.DatatypeSearchTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>datatypeId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+
+	</tag>
+	
+	<tag>
+		<name>datatype-edit</name>
+		<tag-class>com.kohler.tag.DatatypeEditTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>datatypeId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>lang</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>contentId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	<tag>
+		<name>productcomattr-edit</name>
+		<tag-class>com.kohler.tag.ProductComAttrTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>categoryMetadataId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>productMetadataId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>lang</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+	
+	<tag>
+		<name>productaccessory-edit</name>
+		<tag-class>com.kohler.tag.ProductAccessoryTag</tag-class>
+		<body-content>empty</body-content>
+		<attribute>
+			<name>categoryMetadataId</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>skuMetadataId</name>
+			<required>false</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>lang</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+</taglib>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name='keywords' content='$!{data.seo.get(0).seo_keywords}&nbsp;'/>
+    <meta name='description' content='$!{data.seo.get(0).seo_description}&nbsp;'/>
+    #parse("style.vm")
+    <title>$!{data.seo.get(0).seo_title}&nbsp;</title>
+	  
+</head>
+<body>
+<div class="head_wrapper">
+#parse("product_header_pc_cn.vm")
+   
+  <div class="pub_submenu page_menu clearfix">
+		#if(${data.Categories})
+	
+        <div class="submenu_panel actived">
+            <ul>
+			#foreach($Categories in ${data.Categories})
+				#if($velocityCount==1)
+				<li class="first">
+                    <p index="kitchen_list$velocityCount">$!{Categories.category_name}&nbsp;</p>
+				</li>
+				#elseif($velocityCount!=1  && $velocityCount!=${Categories.size()})
+				<li>
+                    <p index="kitchen_list$velocityCount">$!{Categories.category_name}&nbsp;</p>
+				</li>
+				#else
+				 
+				
+				<li class="last">
+                    <p index="kitchen_list$velocityCount">$!{Categories.category_name}&nbsp;</p>
+                </li>
+				#end
+			#end
+            </ul>
+        </div>
+		#end
+    </div>
+    <div class="pub_search">
+        <div class="pub_searchpanel">
+            <div class="pub_searchbar">
+                <input type="text" placeholder="请输入关键字或产品代码" />
+                <div class="pub_searchicon"></div>
+            </div>
+            <div class="pub_searchhistory">
+                <ul>
+                    <li>艾贝</li>
+                    <li>艾葆绰</li>
+                    <li>艾黛儿</li>
+                    <li>艾斯格尔独立套间</li>
+                </ul>
+                <div class="pub_searchall">查看所有搜索结果</div>
+            </div>
+        </div>
+    </div>
+</div>  
+<div class="content_wrapper">
+
+<div class="pub_banner product">
+    <div class="subwrapper kitchen">
+	#if(${data.hero_areas})
+	 #foreach($hero_areas in ${data.hero_areas})
+	 <div class="bgimg actived"><a href="${hero_areas.target_url}" target="${hero_areas.operation}"><img src="${hero_areas.image_url}" alt="${hero_areas.image_alt}" style="width:100%"></a></div>
+		#end
+        <div class="banner_page product_icon clearfix">
+		 #foreach($hero_areas in ${data.hero_areas})
+		 #if(${velocityCount}==1)
+			 <span index="${velocityCount}" class="selected"></span>
+			#else
+			 <span index="${velocityCount}"></span>
+			#end
+		#end
+		#end
+        </div>
+    </div>
+</div>
+<div class="product_content">
+	#if(${data.Categories})
+	#foreach($Categories in ${data.Categories})
+    <div class="list" id="kitchen_list$velocityCount">
+        <div class="column clearfix">
+            <div class="title clearfix">
+                <h2 class="left">$!{Categories.category_name}&nbsp;</h2>
+                <a class="right" href="${Categories.url}">查看所有${Categories.category_name}产品<img class="arrow" style="float:right" src="${data.base_url}images/arrow1.png"
+                                                        alt=""></a>
+            </div>
+			 #foreach($product in ${Categories.banner_units})
+			 #if(${product.type}==1)<!--type为1的是图片-->
+            <div class="item">
+                <div class="item_img">
+                   <a href="${product.target_url}"  > <img src="${product.file_id}" alt="${product.image_alt}" /></a>
+                </div>
+					$!{product.image_overlay_text}&nbsp;		 
+            </div>
+			#end
+			#if(${product.type}==2)<!--type为2的是视频-->
+			<div class="item">
+				<div class="item_img"><!-- <img src="images/bathroom_item1.jpg" alt=""/> --><div id='d$velocityCount'></div></div>
+							$!{product.image_overlay_text}&nbsp;
+			</div>
+			<script type='text/javascript'>
+				$(function(){
+					/**
+					 * 使用说明
+					 * 首先载入上方的 CSS文件以及JS文件
+					 * 本播放器强制了FLASH格式，也就是说只支持FLV视频格式，如果要兼容其他视频格式，需要调整JS代码
+					 * SWF为FLASH播放器的路径地址
+					 * 参数说明
+					 * arguments[0]:需要载入播放器的容器ID
+					 * width : 播放器宽度
+					 * height : 播放器的高度
+					 * autoplay : 是否自动播放
+					 * loop : 是否循环播放
+					 * poster ： 播放器播放之前展示的图片
+					 * flv : Flash 视频的地址
+					 */
+					// 视频播放器代码
+
+							var myVideo = new MYPUMA.PumaVideo('../js/video-js.swf');
+							myVideo.create('d$velocityCount',{'width':312,'height':220,'autoplay':false,'loop':false,'poster':'../images/bathroom_item1.jpg','flv':'../js/test.flv'});
+				});
+        
+			</script>
+			#end
+			#end
+           
+        </div>
+    </div>
+   #end
+   #end
+  
+   #if(${has_suite}==1)
+   <div class="list" id="bathroom_list11">
+    <div class="column clearfix">
+        <div class="title clearfix">
+            <h2 class="left">套间</h2>
+            <a class="right" href=""><span class="right_detail">查看所有套间产品</span><img class="arrow" src="images/arrow1.png" alt=""></a>
+        </div>
+		#if(${suite})
+		#foreach($subsuite in ${suite.keySet()})
+        <div class="item">
+            <div class="item_img"><a href="${suite.get($subsuite).get('target_url')}" link_type="${suite.get($subsuite).get('type')}"><img src="${suite.get($subsuite).get('list_image_url')}" alt="${suite.get($subsuite).get('image_alt')}"/></a></div>
+							<span>
+								<h3>$!{suite.get($subsuite).get('collection')}&nbsp;</h3>
+								<p>$!{suite.get($subsuite).get('name')}&nbsp;</p>
+								<p class="type">$!{suite.get($subsuite).get('code')}&nbsp;</p>
+							</span>
+        </div>
+		#end
+		#end
+      
+       
+    </div>
+</div>
+
+ <div class="list" id="bathroom_list12">
+    <div class="column clearfix">
+        <div class="title clearfix">
+            <h2 class="left">卫浴新品</h2>
+            <a class="right" href=""><span class="right_detail">查看所有卫浴新品产品</span><img class="arrow" src="images/arrow1.png" alt=""></a>
+        </div>
+		#if(${newproduct})
+		#foreach($product in ${newproduct.keySet()})
+        <div class="item">
+            <div class="item_img"><a href="${newproduct.get($product).get('target_url')}" link_type="${newproduct.get($product).get('type')}"><img src="${newproduct.get($product).get('list_image_url')}" alt="${newproduct.get($product).get('image_alt')}"/></a></div>
+							<span>
+								<h3>$!{newproduct.get($product).get('collection')}&nbsp;</h3>
+								<p>$!{newproduct.get($product).get('name')}&nbsp;</p>
+								<p class="type">$!{newproduct.get($product).get('code')}&nbsp;</p>
+							</span>
+        </div>
+		#end
+		#end
+		
+      
+       
+    </div>
+</div>
+	#end
+</div>
+<div class="pub_totop">
+    <div class="totop_btn"><img src="${data.base_url}images/totop.png" alt=""></div>
+    <span>返回顶部</span>
+</div>
+#parse("footer_pc_cn.vm")
+</body>
+</html>

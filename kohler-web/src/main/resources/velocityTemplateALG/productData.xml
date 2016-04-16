@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="productData" param="@product_id,@template_type,@lang">
+
+	<!-- seo 信息 -->
+	<data name="seo" tableName="VW_PRODUCT" filter="PRODUCT_METADATA_ID=@product_id AND LANG=@lang">
+		<field name="seo_title" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_TITLE_PC, SEO_TITLE_MOBILE)"/>
+		<field name="seo_keywords" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_KEYWORDS_PC, SEO_KEYWORDS_MOBILE)"/>
+		<field name="seo_description" fieldType="physicalValue" fieldName="IF(@template_type = 'pc', SEO_DESCRIPTION_PC, SEO_DESCRIPTION_MOBILE)"/>
+	</data>
+	
+	<!-- 面包屑 -->
+	<funcdata name="breadcrumb_name" from="getBreadcrumb" />
+	
+	<!-- 产品信息 -->
+	<data name="product" tableName="VW_PRODUCT" filter="PRODUCT_METADATA_ID=@product_id AND LANG=@lang">
+		<field name="product_id"  fieldType="physicalValue" fieldName="PRODUCT_ID" />
+		<field name="product_name" fieldType="physicalValue" fieldName="PRODUCT_NAME"/>
+		<field name="product_code" fieldType="physicalValue" fieldName="PRODUCT_CODE"/>
+	</data>
+	
+	<!-- 特征 -->
+	<data name="feature" sqlResource="SELECT pa.`VALUE`,ca.CATEGORY_COM_ATTR_NAME,cam.KEY_NAME 
+	 FROM PRODUCT_COM_ATTR pa 
+	  INNER JOIN  CATEGORY_COM_ATTR ca ON pa.CATEGORY_COM_ATTR_METADATA_ID =ca.CATEGORY_COM_ATTR_METADATA_ID 
+	  LEFT JOIN CATEGORY_COM_ATTR_METADATA cam ON  ca.CATEGORY_COM_ATTR_METADATA_ID = cam.CATEGORY_COM_ATTR_METADATA_ID
+	   WHERE ca.LANG=pa.LANG AND ca.IS_ENABLE=pa.IS_ENABLE AND pa.IS_ENABLE = 1 AND pa.PRODUCT_METADATA_ID = @product_id AND pa.LANG=@lang AND cam.KEY_NAME = 'feature'" >
+	   	<field name="value" fieldType="physicalValue" fieldName="VALUE"/>
+		<field name="name" fieldType="physicalValue" fieldName="CATEGORY_COM_ATTR_NAME"/>
+	 </data>
+	 
+	 <!-- 产品故事 -->
+	<data name="story" sqlResource="SELECT pa.`VALUE`,ca.CATEGORY_COM_ATTR_NAME,cam.KEY_NAME,cam.SEQ_NO,cam.INPUT_TYPE,cam.IS_FILTER,ca.IMAGE_URL,ca.IMAGE_SOURCE,ca.IMAGE_ID,ca.IMAGE_TOOLTIP
+	 FROM PRODUCT_COM_ATTR pa 
+	  INNER JOIN  CATEGORY_COM_ATTR ca ON pa.CATEGORY_COM_ATTR_METADATA_ID =ca.CATEGORY_COM_ATTR_METADATA_ID 
+	  LEFT JOIN CATEGORY_COM_ATTR_METADATA cam ON  ca.CATEGORY_COM_ATTR_METADATA_ID = cam.CATEGORY_COM_ATTR_METADATA_ID
+	   WHERE ca.LANG=pa.LANG AND ca.IS_ENABLE=pa.IS_ENABLE AND pa.IS_ENABLE = 1 AND pa.PRODUCT_METADATA_ID = @product_id AND pa.LANG=@lang AND cam.KEY_NAME = 'story'" >
+	   	<field name="value" fieldType="physicalValue" fieldName="VALUE"/>
+		<field name="name" fieldType="physicalValue" fieldName="CATEGORY_COM_ATTR_NAME"/>
+	 </data>
+	 
+	 <!-- 细节亮点 -->
+	<data name="detail_highlight" sqlResource="SELECT pa.`VALUE`,ca.CATEGORY_COM_ATTR_NAME,cam.KEY_NAME,cam.SEQ_NO,cam.INPUT_TYPE,cam.IS_FILTER,ca.IMAGE_URL,ca.IMAGE_SOURCE,ca.IMAGE_ID,ca.IMAGE_TOOLTIP
+	 FROM PRODUCT_COM_ATTR pa 
+	  INNER JOIN  CATEGORY_COM_ATTR ca ON pa.CATEGORY_COM_ATTR_METADATA_ID =ca.CATEGORY_COM_ATTR_METADATA_ID 
+	  LEFT JOIN CATEGORY_COM_ATTR_METADATA cam ON  ca.CATEGORY_COM_ATTR_METADATA_ID = cam.CATEGORY_COM_ATTR_METADATA_ID
+	   WHERE ca.LANG=pa.LANG AND ca.IS_ENABLE=pa.IS_ENABLE AND pa.IS_ENABLE = 1 AND pa.PRODUCT_METADATA_ID = @product_id AND pa.LANG=@lang AND cam.KEY_NAME = 'detail_highlight'" >
+	   	<field name="value" fieldType="physicalValue" fieldName="VALUE"/>
+		<field name="name" fieldType="physicalValue" fieldName="CATEGORY_COM_ATTR_NAME"/>
+	 </data>
+	 
+	 <!-- 产品所属系列  -->
+	 <data name="collection" keyName="COLLECTION_METADATA_ID" sqlResource="SELECT COLLECTION_NAME,c.COLLECTION_METADATA_ID FROM COLLECTION c INNER JOIN PRODUCT_METADATA p ON c.COLLECTION_METADATA_ID = p.COLLECTION_METADATA_ID WHERE PRODUCT_METADATA_ID=@product_id AND c.LANG = @lang" >
+	   		<field name="name" fieldType="physicalValue" fieldName="COLLECTION_NAME"/>
+	 </data>
+	 
+	 <!-- 最佳拍档 -->
+	<funcdata name="pair_well_with" from="getCommonAttrProduct" parameter="pair_well_with" />
+	
+	<!-- 同系列产品 -->
+	<funcdata name="same_collection" from="getCommonAttrProduct" parameter="pair_well_with" />
+	
+	<!-- 相似产品  推荐产品-->
+	<funcdata name="recommended" from="getCommonAttrProduct" parameter="pair_well_with" />
+	
+	<!-- 同产品线产品-->
+	<funcdata name="same_line" from="getCommonAttrProduct" parameter="pair_well_with" />
+	
+	<!-- 相同价位-->
+	<funcdata name="same_price" from="getCommonAttrProduct" parameter="pair_well_with" />
+	 
+	
+	<!-- 公共属性 -->
+	<multidata name="common_attr" sqlResource="SELECT pa.`VALUE`,ca.CATEGORY_COM_ATTR_NAME,cam.KEY_NAME,cam.SEQ_NO,cam.INPUT_TYPE,cam.IS_FILTER,ca.IMAGE_URL,ca.IMAGE_SOURCE,ca.IMAGE_ID,ca.IMAGE_TOOLTIP
+	 FROM PRODUCT_COM_ATTR pa 
+	  INNER JOIN  CATEGORY_COM_ATTR ca ON pa.CATEGORY_COM_ATTR_METADATA_ID =ca.CATEGORY_COM_ATTR_METADATA_ID 
+	  LEFT JOIN CATEGORY_COM_ATTR_METADATA cam ON  ca.CATEGORY_COM_ATTR_METADATA_ID = cam.CATEGORY_COM_ATTR_METADATA_ID
+	   WHERE ca.LANG=pa.LANG AND ca.IS_ENABLE=pa.IS_ENABLE AND pa.IS_ENABLE = 1 AND pa.PRODUCT_METADATA_ID = @product_id AND pa.LANG=@lang AND cam.INPUT_TYPE = 10020001" ><!-- 文本框 -->
+			<field name="category_com_attr_name" fieldType="physicalValue" fieldName="CATEGORY_COM_ATTR_NAME" />
+			<field name="key_name" fieldType="physicalValue" fieldName="KEY_NAME" />
+			<field name="seq_no" fieldType="physicalValue" fieldName="SEQ_NO"/>
+			<field name="input_type" fieldType="physicalValue" fieldName="INPUT_TYPE"/>
+			<field name="is_filter" fieldType="physicalValue" fieldName="IS_FILTER" />
+			<field name="image_tooltip" fieldType="physicalValue" fieldName="IMAGE_TOOLTIP" />>
+			<field name="value" fieldType="physicalValue" fieldName="VALUE" />
+			<field name="image_url" fieldType="physicalFileAsset" fileAssetSource="IMAGE_SOURCE" fileAssetExternal="IMAGE_URL" fileAssetInternal="IMAGE_ID"/>
+	</multidata>
+	
+	<multidata name="common_attr_masterData" sqlResource="SELECT pa.`VALUE`,ca.CATEGORY_COM_ATTR_NAME,cam.KEY_NAME,cam.SEQ_NO,cam.INPUT_TYPE,cam.IS_FILTER,ca.IMAGE_URL,ca.IMAGE_SOURCE,ca.IMAGE_ID,ca.IMAGE_TOOLTIP
+	 FROM PRODUCT_COM_ATTR pa 
+	  INNER JOIN  CATEGORY_COM_ATTR ca ON pa.CATEGORY_COM_ATTR_METADATA_ID =ca.CATEGORY_COM_ATTR_METADATA_ID 
+	  LEFT JOIN CATEGORY_COM_ATTR_METADATA cam ON  ca.CATEGORY_COM_ATTR_METADATA_ID = cam.CATEGORY_COM_ATTR_METADATA_ID
+	   WHERE ca.LANG=@lang AND ca.IS_ENABLE=1 AND pa.IS_ENABLE = 1 AND pa.PRODUCT_METADATA_ID = @product_id AND pa.LANG=@lang AND cam.INPUT_TYPE = 10020002" ><!-- 下拉框-->
+			<field name="category_com_attr_name" fieldType="physicalValue" fieldName="CATEGORY_COM_ATTR_NAME" />
+			<field name="key_name" fieldType="physicalValue" fieldName="KEY_NAME" />
+			<field name="seq_no" fieldType="physicalValue" fieldName="SEQ_NO"/>
+			<field name="input_type" fieldType="physicalValue" fieldName="INPUT_TYPE"/>
+			<field name="is_filter" fieldType="physicalValue" fieldName="IS_FILTER" />
+			<field name="image_tooltip" fieldType="physicalValue" fieldName="IMAGE_TOOLTIP" />
+			<field name="value"  fieldType="physicalMasterData" fieldName="VALUE"/>
+			<field name="image_url" fieldType="physicalFileAsset" fileAssetSource="IMAGE_SOURCE" fileAssetExternal="IMAGE_URL" fileAssetInternal="IMAGE_ID"/>
+	</multidata>
+	
+	<!-- 产品video -->
+	<multidata name="product_video" tableName="VW_PRODUCT_VIDEO" filter="PRODUCT_METADATA_ID=@product_id AND LANG=@lang">
+			<field name="video_title" fieldType="physicalValue" fieldName="PRODUCT_VIDEO_NAME"/>
+			<field name="video_url" fieldType="physicalFileAsset" fileAssetSource="FILE_SOURCE" fileAssetExternal="FILE_URL" fileAssetInternal="FILE_ID"/>
+	</multidata>
+	<!-- 产品 parts -->
+	<multidata name="product_parts" tableName="VW_PRODUCT_PART" filter="PRODUCT_METADATA_ID=@product_id AND LANG=@lang">
+			<field name="part_name" fieldType="physicalValue" fieldName="PRODUCT_PART_NAME"/>
+			<field name="part_url" fieldType="physicalFileAsset" fileAssetSource="IMAGE_SOURCE" fileAssetExternal="IMAGE_URL" fileAssetInternal="IMAGE_ID"/>
+	</multidata>
+	<!-- 产品 CAD -->
+	<multidata name="product_cads" tableName="VW_PRODUCT_CAD" filter="PRODUCT_METADATA_ID=@product_id AND LANG=@lang">
+			<field name="cad_type_id" fieldType="physicalValue" fieldName="CAD_TYPE"/>
+			<field name="cad_name" fieldType="physicalValue" fieldName="PRODUCT_CAD_NAME"/>
+			<field name="cad_type" fieldType="physicalMasterData" fieldName="CAD_TYPE"/>
+			<field name="suffix" fieldType="physicalValue" fieldName="SUFFIX"/>
+			<field name="cad_url" fieldType="physicalFileAsset" fileAssetSource="FILE_SOURCE" fileAssetExternal="FILE_URL" fileAssetInternal="FILE_ID"/>
+	</multidata>
+	<!-- 产品pdf -->
+	<multidata name="product_pdf" tableName="VW_PRODUCT_PDF" filter="PRODUCT_METADATA_ID=@product_id AND LANG=@lang">
+			<field name="pdf_name" fieldType="physicalValue" fieldName="PRODUCT_PDF_NAME"/>
+			<field name="pdf_url" fieldType="physicalFileAsset" fileAssetSource="FILE_SOURCE" fileAssetExternal="FILE_URL" fileAssetInternal="FILE_ID"/>
+	</multidata>
+</page>

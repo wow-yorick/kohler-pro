@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Template id="S10001" name="select_testTemplate">
+	
+	<Field name="showroom location" type="showroom location" >
+		</Field>
+	<Field name="showroom location" type="showroom location" >
+		</Field>
+		
+	<selects>
+			<Field name="showroom location" type="showroom location" area="left" complicated="10002">
+				</Field>
+			<Field name="showroom location" type="showroom location" area="left" complicated="10002">
+				</Field>
+	</selects>
+	
+	<results>
+		<result>colorName</result>
+		<result>size</result>
+		<result>city</result>
+	</results>
+	
+	
+	<results>
+		<result>colorName</result>
+		<result>size</result>
+		<result>city</result>
+	</results>
+</Template>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Cache-Control" content="max-age=300"/>
+    <meta name='keywords' content='$!{data.seo.get(0).seo_keywords}&nbsp;'/>
+    <meta name='description' content='$!{data.seo.get(0).seo_description}&nbsp;'/>
+    <meta name="applicable-device" content="pc">
+	#parse("style.vm")
+    <title>$!{data.seo.get(0).seo_title}&nbsp;</title>
+</head>
+<body>
+<div class="head_wrapper">
+    #parse("section_header_pc_en.vm")
+	
+	
+<div class="content_wrapper">
+<div class="pub_banner product">
+    <div class="subwrapper kitchen">
+        <a href="baths.html" class="bgimg actived"><img src="images/banner1.jpg" alt=""></a>
+        <a href="baths.html" class="bgimg"><img src="images/banner2.jpg" alt=""></a>
+        <a href="baths.html" class="bgimg"><img src="images/banner3.jpg" alt=""></a>
+        <a href="baths.html" class="bgimg"><img src="images/banner4.jpg" alt=""></a>
+        <a href="baths.html" class="bgimg"><img src="images/banner5.jpg" alt=""></a>
+        <div class="banner_page product_icon clearfix">
+            <span index="1" class="selected"></span>
+            <span index="2"></span>
+            <span index="3"></span>
+            <span index="4"></span>
+            <span index="5"></span>
+        </div>
+    </div>
+	
+	<div class="pub_banner product">
+    <div class="subwrapper kitchen">
+	#if(${data.hero_areas})
+	 #foreach($hero_areas in ${data.hero_areas})
+	  #if(${velocityCount}==1)
+	 <div class="bgimg actived"><a href="${hero_areas.target_url}" target="${hero_areas.operation}"><img src="${hero_areas.image_url}" alt="${hero_areas.image_alt}" style="width:100%"></a></div>
+	 #else
+	  <div class="bgimg"><a href="${hero_areas.target_url}" target="${hero_areas.operation}"><img src="${hero_areas.image_url}" alt="${hero_areas.image_alt}" style="width:100%"></a></div>
+		#end
+        <div class="banner_page product_icon clearfix">
+		 #foreach($hero_areas in ${data.hero_areas})
+		 #if(${velocityCount}==1)
+			 <span index="${velocityCount}" class="selected"></span>
+			#else
+			 <span index="${velocityCount}"></span>
+			#end
+		#end
+		#end
+        </div>
+    </div>
+</div>
+<div class="product_content">
+    #if(${data.Categories})
+	#foreach($Categories in ${data.Categories})
+    <div class="list" id="kitchen_list$velocityCount">
+        <div class="column clearfix">
+            <div class="title clearfix">
+                <h2 class="left">$!{Categories.category_name}&nbsp;</h2>
+                <a class="right" href="${Categories.url}">View All${Categories.category_name}products<img class="arrow" style="float:right" src="images/arrow1.png"
+                                                        alt="$!{Categories.image_alt}&nbsp;"></a>
+            </div>
+			 #foreach($product in ${Categories.banner_units})
+            <div class="item">
+                <div class="item_img">
+                   <a href="${product.get('target_url')}"  link_type="${product.type}"> <img src="http://localhost/publish/upload/images/kitchen_item10.jpg" alt="$!{product.image_alt}&nbsp;" /></a>
+                </div>
+					$!{product.image_overlay_text}&nbsp;		 
+            </div>
+			#end
+           
+        </div>
+    </div>
+   #end
+   #end
+  
+   #if(${has_suite}==1)
+   <div class="list" id="bathroom_list11">
+    <div class="column clearfix">
+        <div class="title clearfix">
+            <h2 class="left">Kitchen Water Filtration System</h2>
+            <a class="right" href=""><span class="right_detail">View All Water Filtradtion Products</span><img class="arrow" src="images/arrow1.png" alt=""></a>
+        </div>
+		#if(${suite})
+		#foreach($subsuite in ${suite.keySet()})
+        <div class="item">
+            <div class="item_img"><a href="${suite.get($subsuite).get('target_url')}" link_type="${suite.get($subsuite).get('type')}"><img src="${suite.get($subsuite).get('list_image_url')}" alt="${suite.get($subsuite).get('image_alt')}"/></a></div>
+							<span>
+								<h3>$!{suite.get($subsuite).get('collection')}&nbsp;</h3>
+								<p>$!{suite.get($subsuite).get('name')}&nbsp;</p>
+								<p class="type">$!{suite.get($subsuite).get('code')}&nbsp;</p>
+							</span>
+        </div>
+		#end
+		#end
+      
+       
+    </div>
+</div>
+
+ <div class="list" id="bathroom_list12">
+    <div class="column clearfix">
+        <div class="title clearfix">
+            <h2 class="left">New Kitchen Products</h2>
+            <a class="right" href=""><span class="right_detail">View All Kitchen New Products</span><img class="arrow" src="images/arrow1.png" alt=""></a>
+        </div>
+		#if(${newproduct})
+		#foreach($product in ${newproduct.keySet()})
+        <div class="item">
+            <div class="item_img"><a href="${newproduct.get($product).get('target_url')}" link_type="${newproduct.get($product).get('type')}"><img src="${newproduct.get($product).get('list_image_url')}" alt="${newproduct.get($product).get('image_alt')}"/></a></div>
+							<span>
+								<h3>$!{newproduct.get($product).get('collection')}&nbsp;</h3>
+								<p>$!{newproduct.get($product).get('name')}&nbsp;</p>
+								<p class="type">$!{newproduct.get($product).get('code')}&nbsp;</p>
+							</span>
+        </div>
+		#end
+		#end
+		
+      
+       
+    </div>
+</div>
+	#end
+    
+   
+</div>
+<div class="pub_totop">
+    <div class="totop_btn"><img src="images/totop.png" alt=""></div>
+    <span>Back to top</span>
+</div>
+#parse("footer_pc_en.vm")
+</div>
+</body>
+</html>
