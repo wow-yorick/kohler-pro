@@ -1,2 +1,2 @@
-# myKohlerPro
-我的java开发项目
+# 科勒项目
+> 静态发布功能(publish)
