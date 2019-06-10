@@ -1,5 +1,0 @@
-﻿#if($!{data})
-      var jsonsku='$!{data}';
-#else
-      var jsonsku='';	
-#end

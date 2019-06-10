@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="pageData" param="@page_id,@template_type,@lang">
-	<!-- solr map -->
-	<multidata name="solr_map" tableName="DB_SOLR_MAPPING" filter="IS_ENABLE = 1"  >
-			<field name="dbFieldName" fieldType="physicalValue" fieldName="DB_FIELD_NAME" />
-			<field name="solrFieldName" fieldType="physicalValue" fieldName="SOLR_FIELD_NAME" />
-	</multidata>
-</page>
